@@ -31,9 +31,42 @@ npm run dev
 npm run typecheck
 npm test
 npm run build
+npm run deploy -- --dry-run
 ```
 
 `npm test` requires `TEST_DATABASE_URL` and uses `TEST_DIRECT_URL` when provided. Tests reset that database with `prisma migrate reset --force`, so it must point at a disposable database whose name explicitly includes `test`.
+
+## Cloudflare Workers deployment
+
+The API can run as a Cloudflare Worker at `https://api.link-like-setlist-maker.sukisuki.club`.
+The Worker connects to Supabase Postgres through the `HYPERDRIVE` binding and uses `DATABASE_URL` as the fallback connection string for local Worker runs.
+
+Required Worker secrets:
+
+```bash
+wrangler secret put DATABASE_URL
+wrangler secret put BACKEND_API_TOKEN
+```
+
+`DATABASE_URL` should be the Supabase Postgres runtime connection string. Keep `DIRECT_URL` for local Prisma migrations, seeds, and administrative scripts; it is not required by the Worker runtime.
+
+Required Worker bindings:
+
+- `HYPERDRIVE`: Cloudflare Hyperdrive config for the Supabase Postgres runtime database.
+
+Deploy:
+
+```bash
+npm run deploy
+```
+
+Local Worker runtime check:
+
+```bash
+npm run dev:worker
+```
+
+After deploying the backend Worker, update the frontend Worker secret or variable `BACKEND_API_BASE_URL` to `https://api.link-like-setlist-maker.sukisuki.club` and redeploy the frontend.
 
 ## Public API hardening
 
@@ -42,7 +75,7 @@ The public setlist API intentionally supports only anonymous create and ID-based
 - `POST /api/setlists`
 - `GET /api/setlists/:id`
 
-Do not expose anonymous list, update, or delete endpoints without adding authentication and ownership checks. Set `BACKEND_API_TOKEN` to the same secret used by the frontend server; protected write and preview requests without that token return `401`. Public write and forced preview-refresh requests are also protected by in-process rate limits; keep edge/CDN rate limits enabled in production as the outer enforcement layer.
+Do not expose anonymous list, update, or delete endpoints without adding authentication and ownership checks. Set `BACKEND_API_TOKEN` to the same secret used by the frontend server; protected write and SongMedia requests without that token return `401`. Public writes are also protected by in-process rate limits; keep edge/CDN rate limits enabled in production as the outer enforcement layer. SongMedia rows are managed directly in the database and user-facing APIs must not create or update media records.
 
 ## Supabase project setup
 

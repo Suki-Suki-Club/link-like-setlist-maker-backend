@@ -1,4 +1,5 @@
 import { z } from "@hono/zod-openapi";
+import { SongMediaResponseSchema } from "./songMedia.js";
 
 export const UnitSchema = z
   .object({
@@ -52,3 +53,10 @@ export const SongResponseSchema = z
     song: SongSchema
   })
   .openapi("SongResponse");
+
+export const CatalogBootstrapResponseSchema = z
+  .object({
+    songs: z.array(SongSchema),
+    mediaBySongId: z.record(z.string(), SongMediaResponseSchema)
+  })
+  .openapi("CatalogBootstrapResponse");

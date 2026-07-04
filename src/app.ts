@@ -7,6 +7,7 @@ import { createPublicApiSecurityMiddleware } from "./middleware/security.js";
 import { registerCatalogRoutes } from "./routes/catalog.js";
 import { registerHealthRoutes } from "./routes/health.js";
 import { registerSetlistRoutes } from "./routes/setlists.js";
+import { createRuntimeMiddleware } from "./runtime.js";
 import type { AppEnv } from "./supabaseServer.js";
 
 const app = new OpenAPIHono<AppEnv>({
@@ -17,10 +18,11 @@ const app = new OpenAPIHono<AppEnv>({
   }
 });
 
+app.use("*", createRuntimeMiddleware());
 app.use(
   "*",
   cors({
-    origin: config.corsOrigin,
+    origin: () => config.corsOrigin,
     allowMethods: ["GET", "POST", "OPTIONS"],
     allowHeaders: ["Content-Type"],
     credentials: false

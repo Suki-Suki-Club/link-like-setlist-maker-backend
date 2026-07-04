@@ -6,13 +6,14 @@ import {
   SongResponseSchema,
   SongsQuerySchema,
   SongsResponseSchema,
-  UnitsResponseSchema
+  UnitsResponseSchema,
+  CatalogBootstrapResponseSchema
 } from "../schemas/catalog.js";
 import { ErrorResponseSchema } from "../schemas/error.js";
-import { SongPreviewQuerySchema, SongPreviewResponseSchema } from "../schemas/songPreview.js";
-import { getSong, listSongs, listUnits } from "../services/catalogService.js";
-import { getSongPreview } from "../services/songPreviewService.js";
-import { createCatalogSupabaseMiddleware, getSupabaseContext, type AppEnv } from "../supabaseServer.js";
+import { SongMediaResponseSchema } from "../schemas/songMedia.js";
+import { getCatalogBootstrap, getSong, listSongs, listUnits } from "../services/catalogService.js";
+import { getSongMedia } from "../services/songMediaService.js";
+import type { AppEnv } from "../supabaseServer.js";
 
 const listUnitsRoute = createRoute({
   method: "get",
@@ -76,20 +77,35 @@ const getSongRoute = createRoute({
   }
 });
 
-const getSongPreviewRoute = createRoute({
+const getCatalogBootstrapRoute = createRoute({
   method: "get",
-  path: "/api/songs/{id}/preview",
+  path: "/api/catalog/bootstrap",
+  tags: ["Catalog"],
+  responses: {
+    200: {
+      description: "Seeded songs and media metadata for the setlist maker entry screen",
+      content: {
+        "application/json": {
+          schema: CatalogBootstrapResponseSchema
+        }
+      }
+    }
+  }
+});
+
+const getSongMediaRoute = createRoute({
+  method: "get",
+  path: "/api/song-media/{id}",
   tags: ["Catalog"],
   request: {
-    params: SongParamsSchema,
-    query: SongPreviewQuerySchema
+    params: SongParamsSchema
   },
   responses: {
     200: {
-      description: "Deezer 30-second preview lookup for a seeded song",
+      description: "Read-only media metadata for a seeded song",
       content: {
         "application/json": {
-          schema: SongPreviewResponseSchema
+          schema: SongMediaResponseSchema
         }
       }
     },
@@ -105,36 +121,37 @@ const getSongPreviewRoute = createRoute({
 });
 
 export function registerCatalogRoutes(app: OpenAPIHono<AppEnv>) {
-  const catalogSupabase = createCatalogSupabaseMiddleware();
-
-  app.use("/api/units", catalogSupabase);
-  app.use("/api/songs", catalogSupabase);
-  app.use("/api/songs/*", catalogSupabase);
-
   app.openapi(listUnitsRoute, async (c) => {
-    getSupabaseContext(c);
     const units = await listUnits();
     return c.json({ units: units.map(presentUnit) }, 200);
   });
 
   app.openapi(listSongsRoute, async (c) => {
-    getSupabaseContext(c);
     const query = c.req.valid("query");
     const songs = await listSongs(query);
     return c.json({ songs: songs.map(presentSong) }, 200);
   });
 
-  app.openapi(getSongPreviewRoute, async (c) => {
-    getSupabaseContext(c);
-    const { id } = c.req.valid("param");
-    const { refresh } = c.req.valid("query");
-    const preview = await getSongPreview(id, { refresh: refresh === "true" });
+  app.openapi(getCatalogBootstrapRoute, async (c) => {
+    const bootstrap = await getCatalogBootstrap();
 
-    return c.json(preview, 200);
+    return c.json(
+      {
+        songs: bootstrap.songs.map(presentSong),
+        mediaBySongId: bootstrap.mediaBySongId
+      },
+      200
+    );
+  });
+
+  app.openapi(getSongMediaRoute, async (c) => {
+    const { id } = c.req.valid("param");
+    const media = await getSongMedia(id);
+
+    return c.json(media, 200);
   });
 
   app.openapi(getSongRoute, async (c) => {
-    getSupabaseContext(c);
     const { id } = c.req.valid("param");
     const song = await getSong(id).catch((error: unknown) => {
       if (error instanceof AppError) {

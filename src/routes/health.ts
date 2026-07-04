@@ -19,6 +19,14 @@ const healthRoute = createRoute({
   }
 });
 
+const apiHealthRoute = createRoute({
+  method: "get",
+  path: "/api/health",
+  tags: ["Health"],
+  responses: healthRoute.responses,
+});
+
 export function registerHealthRoutes(app: OpenAPIHono<AppEnv>) {
   app.openapi(healthRoute, (c) => c.json({ status: "ok" as const }, 200));
+  app.openapi(apiHealthRoute, (c) => c.json({ status: "ok" as const }, 200));
 }

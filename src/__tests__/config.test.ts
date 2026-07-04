@@ -13,11 +13,13 @@ afterEach(() => {
 
 describe("config", () => {
   it("requires DATABASE_URL when database env vars are unset", async () => {
-    delete process.env.DATABASE_URL;
-    delete process.env.DIRECT_URL;
+    process.env.DATABASE_URL = "";
+    process.env.DIRECT_URL = "";
     process.env.DOTENV_CONFIG_PATH = ".env.test.missing";
 
-    await expect(loadConfigModule()).rejects.toThrow(/DATABASE_URL/);
+    const { createAppConfig } = await loadConfigModule();
+
+    expect(() => createAppConfig()).toThrow(/DATABASE_URL/);
   });
 
   it("falls back to DATABASE_URL when DIRECT_URL is unset", async () => {
@@ -46,7 +48,9 @@ describe("config", () => {
     process.env.NODE_ENV = "production";
     delete process.env.BACKEND_API_TOKEN;
 
-    await expect(loadConfigModule()).rejects.toThrow(/BACKEND_API_TOKEN/);
+    const { createAppConfig } = await loadConfigModule();
+
+    expect(() => createAppConfig()).toThrow(/BACKEND_API_TOKEN/);
   });
 
   it("reads BACKEND_API_TOKEN from env outside production", async () => {

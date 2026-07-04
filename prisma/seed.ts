@@ -2,7 +2,6 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { prisma } from "../src/db/client.js";
-import { deezerArtistDefaults } from "../src/services/deezerArtistDefaults.js";
 
 type UnitSeed = {
   id: string;
@@ -17,9 +16,6 @@ type SongSeed = {
   unitId: string;
   sortOrder: number;
   releaseDate?: string;
-  deezerSearchTitle?: string;
-  deezerArtistName?: string;
-  deezerArtistId?: number;
   deezerTrackId?: number | null;
 };
 
@@ -45,24 +41,32 @@ export async function seedCatalog() {
       }
 
       for (const song of songs) {
-        const deezerArtist = deezerArtistDefaults[song.unitId];
         const songData = {
           id: song.id,
           title: song.title,
           titleJa: song.titleJa ?? song.title,
           unitId: song.unitId,
           sortOrder: song.sortOrder,
-          releaseDate: song.releaseDate ? new Date(song.releaseDate) : null,
-          deezerSearchTitle: song.deezerSearchTitle ?? null,
-          deezerArtistName: song.deezerArtistName ?? deezerArtist?.name ?? null,
-          deezerArtistId: song.deezerArtistId ?? deezerArtist?.id ?? null,
-          deezerTrackId: song.deezerTrackId == null ? null : BigInt(song.deezerTrackId)
+          releaseDate: song.releaseDate ? new Date(song.releaseDate) : null
         };
 
         await tx.song.upsert({
           where: { id: song.id },
           update: songData,
           create: songData
+        });
+
+        await tx.songMedia.upsert({
+          where: { songId: song.id },
+          update: {
+            status: song.deezerTrackId == null ? "unavailable" : "available",
+            deezerTrackId: song.deezerTrackId == null ? null : BigInt(song.deezerTrackId)
+          },
+          create: {
+            songId: song.id,
+            status: song.deezerTrackId == null ? "unavailable" : "available",
+            deezerTrackId: song.deezerTrackId == null ? null : BigInt(song.deezerTrackId)
+          }
         });
       }
     },

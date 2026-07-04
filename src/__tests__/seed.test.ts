@@ -5,6 +5,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 const transactionMock = vi.fn();
 const unitUpsertMock = vi.fn(async () => undefined);
 const songUpsertMock = vi.fn(async () => undefined);
+const songMediaUpsertMock = vi.fn(async () => undefined);
 
 vi.mock("../db/client.js", () => ({
   prisma: {
@@ -16,11 +17,13 @@ beforeEach(() => {
   transactionMock.mockReset();
   unitUpsertMock.mockClear();
   songUpsertMock.mockClear();
+  songMediaUpsertMock.mockClear();
 
   transactionMock.mockImplementation(async (callback: (tx: unknown) => Promise<unknown>, options?: unknown) => {
     await callback({
       unit: { upsert: unitUpsertMock },
-      song: { upsert: songUpsertMock }
+      song: { upsert: songUpsertMock },
+      songMedia: { upsert: songMediaUpsertMock }
     });
 
     return options;
@@ -53,11 +56,17 @@ describe("seedCatalog", () => {
     });
     expect(unitUpsertMock).toHaveBeenCalled();
     expect(songUpsertMock).toHaveBeenCalled();
-    expect(songUpsertMock).toHaveBeenCalledWith(
+    const perenialSongUpsert = songUpsertMock.mock.calls
+      .map(([input]) => input as { where: { id: string }; update: Record<string, unknown>; create: Record<string, unknown> })
+      .find((input) => input.where.id === "perenial");
+    expect(perenialSongUpsert).toBeDefined();
+    expect(perenialSongUpsert?.update).not.toHaveProperty("deezerTrackId");
+    expect(perenialSongUpsert?.create).not.toHaveProperty("deezerTrackId");
+    expect(songMediaUpsertMock).toHaveBeenCalledWith(
       expect.objectContaining({
-        where: { id: "perenial" },
-        update: expect.objectContaining({ deezerTrackId: null }),
-        create: expect.objectContaining({ deezerTrackId: null })
+        where: { songId: "perenial" },
+        update: expect.objectContaining({ status: "unavailable", deezerTrackId: null }),
+        create: expect.objectContaining({ songId: "perenial", status: "unavailable", deezerTrackId: null })
       })
     );
   });

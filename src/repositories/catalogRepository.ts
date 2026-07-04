@@ -46,6 +46,21 @@ export async function findSongById(id: string) {
   });
 }
 
+export async function findSongsByIds(ids: string[]) {
+  if (ids.length === 0) {
+    return [];
+  }
+
+  return prisma.song.findMany({
+    where: {
+      id: {
+        in: Array.from(new Set(ids))
+      }
+    },
+    include: songInclude
+  });
+}
+
 export async function findExistingSongIds(songIds: string[]) {
   if (songIds.length === 0) {
     return new Set<string>();

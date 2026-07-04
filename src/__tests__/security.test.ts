@@ -18,10 +18,6 @@ const { prismaMock } = vi.hoisted(() => {
     unitId: unit.id,
     sortOrder: 1,
     releaseDate: null,
-    deezerSearchTitle: null,
-    deezerArtistName: null,
-    deezerArtistId: null,
-    deezerTrackId: null,
     unit,
     createdAt: now,
     updatedAt: now
@@ -59,21 +55,23 @@ const { prismaMock } = vi.hoisted(() => {
     unit: {
       findMany: async () => [unit]
     },
-    songPreview: {
+    songMedia: {
       findUnique: async () => null,
+      findMany: async () => [
+        {
+          songId: "dream-believers",
+          status: "unavailable",
+          deezerTrackId: null,
+          createdAt: now,
+          updatedAt: now
+        }
+      ],
       upsert: async () => ({
         songId: "missing-song",
         status: "unavailable",
         deezerTrackId: null,
-        deezerTrackTitle: null,
-        deezerArtistName: null,
-        deezerAlbumTitle: null,
-        duration: null,
-        previewUrl: null,
-        trackLink: null,
-        isrc: null,
-        rank: null,
-        fetchedAt: now
+        createdAt: now,
+        updatedAt: now
       })
     },
     $transaction: async <T>(callback: (tx: unknown) => Promise<T>) => callback(prismaMock)
@@ -132,11 +130,11 @@ describe("public API abuse limits", () => {
       },
       body: JSON.stringify({ title: "Opening block", items: [] })
     });
-    const previewResponse = await app.request("/api/songs/dream-believers/preview");
+    const mediaResponse = await app.request("/api/song-media/dream-believers");
 
     expect(missingTokenResponse.status).toBe(401);
     expect(invalidTokenResponse.status).toBe(401);
-    expect(previewResponse.status).toBe(401);
+    expect(mediaResponse.status).toBe(401);
     await expect(missingTokenResponse.json()).resolves.toEqual({
       error: { code: "UNAUTHORIZED", message: "Backend API token is required" }
     });
@@ -193,26 +191,17 @@ describe("public API abuse limits", () => {
     });
   });
 
-  it("rate limits forced preview refresh attempts by client IP", async () => {
+  it("does not rate limit authenticated media read attempts", async () => {
     const headers = {
       ...serviceAuthHeaders,
       "x-forwarded-for": "203.0.113.12"
     };
 
-    for (let index = 0; index < 20; index += 1) {
-      const response = await app.request("/api/songs/missing-song/preview?refresh=true", {
+    for (let index = 0; index < 21; index += 1) {
+      const response = await app.request("/api/song-media/missing-song", {
         headers
       });
       expect(response.status).toBe(404);
     }
-
-    const limitedResponse = await app.request("/api/songs/missing-song/preview?refresh=true", {
-      headers
-    });
-
-    expect(limitedResponse.status).toBe(429);
-    await expect(limitedResponse.json()).resolves.toEqual({
-      error: { code: "RATE_LIMITED", message: "Too many requests" }
-    });
   });
 });

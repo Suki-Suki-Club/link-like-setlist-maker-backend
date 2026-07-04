@@ -2,31 +2,27 @@ import type { SupabaseContext, SupabaseEnv } from "@supabase/server";
 import { withSupabase } from "@supabase/server/adapters/hono";
 import { resolveEnv } from "@supabase/server/core";
 import type { Context } from "hono";
-
-function requireEnv(name: string) {
-  const value = process.env[name];
-  if (!value) {
-    throw new Error(`${name} is required.`);
-  }
-
-  return value;
-}
+import { config, type RuntimeEnv } from "./config.js";
 
 export type AppEnv = {
+  Bindings: RuntimeEnv;
   Variables: {
     supabaseContext: SupabaseContext;
   };
 };
 
 export function getSupabaseServerEnv(): SupabaseEnv {
-  const jwksUrl = process.env.SUPABASE_JWKS_URL;
+  const jwksUrl = config.supabaseJwksUrl;
   const { data, error } = resolveEnv({
-    url: requireEnv("SUPABASE_URL"),
+    url: requireSupabaseEnv("SUPABASE_URL", config.supabaseUrl),
     publishableKeys: {
-      default: requireEnv("SUPABASE_PUBLISHABLE_KEY")
+      default: requireSupabaseEnv(
+        "SUPABASE_PUBLISHABLE_KEY",
+        config.supabasePublishableKey,
+      )
     },
     secretKeys: {
-      default: requireEnv("SUPABASE_SECRET_KEY")
+      default: requireSupabaseEnv("SUPABASE_SECRET_KEY", config.supabaseSecretKey)
     },
     jwks: jwksUrl ? new URL(jwksUrl) : undefined
   });
@@ -36,6 +32,14 @@ export function getSupabaseServerEnv(): SupabaseEnv {
   }
 
   return data;
+}
+
+function requireSupabaseEnv(name: string, value: string | undefined) {
+  if (!value) {
+    throw new Error(`${name} is required.`);
+  }
+
+  return value;
 }
 
 export function createCatalogSupabaseMiddleware() {
