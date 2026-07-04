@@ -101,7 +101,7 @@ describe("songMediaService", () => {
         trackLink: "https://www.deezer.com/track/2967993121",
         isrc: "JPI102300001",
         rank: 41585,
-        fetchedAt: now
+        fetchedAt: new Date(Date.now() - 30 * 60 * 1000)
       })
     );
 
@@ -124,6 +124,45 @@ describe("songMediaService", () => {
       }
     });
     expect(getDeezerTrackMock).not.toHaveBeenCalled();
+  });
+
+  it("refreshes persisted media when only the preview URL is older than the playback freshness window", async () => {
+    findSongMediaMock.mockResolvedValue(
+      createSongMedia("dream-believers", 2967993121, "available", {
+        title: "Dream Believers",
+        artistName: "蓮ノ空女学院スクールアイドルクラブ",
+        albumTitle: "Dream Believers",
+        duration: 284,
+        coverUrl: "https://e-cdns-images.dzcdn.net/images/cover/dream-xl.jpg",
+        previewUrl: "https://cdnt-preview.dzcdn.net/expired-dream.mp3",
+        trackLink: "https://www.deezer.com/track/2967993121",
+        isrc: "JPI102300001",
+        rank: 41585,
+        fetchedAt: new Date(Date.now() - 2 * 60 * 60 * 1000)
+      })
+    );
+    getDeezerTrackMock.mockResolvedValue(
+      createDeezerTrack(2967993121, { preview: "https://cdnt-preview.dzcdn.net/refreshed-dream.mp3" })
+    );
+
+    const result = await getSongMedia("dream-believers");
+
+    expect(result).toMatchObject({
+      songId: "dream-believers",
+      status: "available",
+      media: {
+        previewUrl: "https://cdnt-preview.dzcdn.net/refreshed-dream.mp3",
+        coverUrl: "https://e-cdns-images.dzcdn.net/images/cover/dream-xl.jpg"
+      }
+    });
+    expect(getDeezerTrackMock).toHaveBeenCalledWith(2967993121);
+    expect(upsertSongMediaDetailsMock).toHaveBeenCalledWith(
+      "dream-believers",
+      expect.objectContaining({
+        previewUrl: "https://cdnt-preview.dzcdn.net/refreshed-dream.mp3"
+      }),
+      expect.any(Date)
+    );
   });
 
   it("returns available media from a manually managed Deezer track id", async () => {
@@ -158,7 +197,8 @@ describe("songMediaService", () => {
         trackLink: "https://www.deezer.com/track/2967993121",
         isrc: "JPI102300001",
         rank: 41585
-      })
+      }),
+      expect.any(Date)
     );
   });
 

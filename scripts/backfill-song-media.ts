@@ -12,6 +12,9 @@ import {
 
 // Run this outside request handling, for example from a Cloudflare Cron-triggered job
 // or a manually triggered CI workflow. It intentionally keeps Deezer concurrency low.
+// This stores previewUrl with the other media fields for response completeness, but
+// Deezer preview URLs expire quickly. Playback callers must still go through the
+// single-song media path, which revalidates and refreshes stale preview URLs.
 const concurrency = readPositiveInteger("SONG_MEDIA_BACKFILL_CONCURRENCY", 3, 5);
 const limit = readPositiveInteger("SONG_MEDIA_BACKFILL_LIMIT", 100);
 const maxAttempts = readPositiveInteger("SONG_MEDIA_BACKFILL_MAX_ATTEMPTS", 4);
