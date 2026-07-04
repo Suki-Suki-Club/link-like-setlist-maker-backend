@@ -21,12 +21,16 @@ export type SongMediaResponse = {
 
 type CachedTrackResult = {
   expiresAt: number;
+  fetchedAt: Date;
   media: SongMediaPayload | null;
 };
 
-const successCacheTtlMs = 24 * 60 * 60 * 1000;
-const failureCacheTtlMs = 5 * 60 * 1000;
 export const songMediaDetailsFreshnessMs = 30 * 24 * 60 * 60 * 1000;
+// Deezer preview URLs are signed and short-lived; keep playback freshness much
+// shorter than stable title/artist/cover metadata.
+export const songMediaPreviewFreshnessMs = 60 * 60 * 1000;
+const successCacheTtlMs = songMediaPreviewFreshnessMs;
+const failureCacheTtlMs = 5 * 60 * 1000;
 const deezerRetryCount = 2;
 const mediaLookupConcurrency = 5;
 const trackCache = new Map<number, CachedTrackResult>();
@@ -59,6 +63,8 @@ export async function getPersistedSongMediaBySongIds(songIds: string[]): Promise
   const mediaBySongId = new Map(mediaRows.map((media) => [media.songId, media]));
   const results: Record<string, SongMediaResponse> = {};
 
+  // Catalog bootstrap intentionally avoids Deezer refreshes. Persisted previewUrl
+  // values may be expired signed URLs; playback must call getSongMedia().
   for (const songId of uniqueSongIds) {
     const media = mediaBySongId.get(songId) ?? null;
     const persistedMedia = media?.status === "available" ? mediaPayloadFromPersistedRow(media) : null;
@@ -85,7 +91,7 @@ async function resolveSongMedia(songId: string, media: SongMedia | null): Promis
   }
 
   const persistedMedia = mediaPayloadFromPersistedRow(media);
-  if (persistedMedia && isFreshSongMediaDetails(media.fetchedAt)) {
+  if (persistedMedia && isFreshSongMediaDetails(media.fetchedAt) && isFreshSongMediaPreview(media.fetchedAt)) {
     return {
       songId,
       status: "available",
@@ -93,34 +99,41 @@ async function resolveSongMedia(songId: string, media: SongMedia | null): Promis
     };
   }
 
-  const resolvedMedia = await resolveDeezerTrack(Number(media.deezerTrackId));
-  if (!resolvedMedia) {
+  const resolvedMedia = await resolveDeezerTrack(Number(media.deezerTrackId), {
+    bypassCache: persistedMedia !== null && !isFreshSongMediaPreview(media.fetchedAt)
+  });
+  if (!resolvedMedia.media) {
     return unavailableSongMedia(songId);
   }
 
-  await upsertSongMediaDetails(songId, resolvedMedia);
+  await upsertSongMediaDetails(songId, resolvedMedia.media, resolvedMedia.fetchedAt);
 
   return {
     songId,
     status: "available",
-    media: resolvedMedia
+    media: resolvedMedia.media
   };
 }
 
-async function resolveDeezerTrack(trackId: number): Promise<SongMediaPayload | null> {
+async function resolveDeezerTrack(
+  trackId: number,
+  options: { bypassCache?: boolean } = {}
+): Promise<CachedTrackResult> {
   const now = Date.now();
   const cached = trackCache.get(trackId);
-  if (cached && cached.expiresAt > now) {
-    return cached.media;
+  if (!options.bypassCache && cached && cached.expiresAt > now) {
+    return cached;
   }
 
   const media = await fetchDeezerTrackWithRetry(trackId);
-  trackCache.set(trackId, {
+  const result = {
     media,
+    fetchedAt: new Date(now),
     expiresAt: now + (media ? successCacheTtlMs : failureCacheTtlMs)
-  });
+  };
+  trackCache.set(trackId, result);
 
-  return media;
+  return result;
 }
 
 async function fetchDeezerTrackWithRetry(trackId: number): Promise<SongMediaPayload | null> {
@@ -180,6 +193,10 @@ function mediaPayloadFromPersistedRow(media: SongMedia): SongMediaPayload | null
 
 function isFreshSongMediaDetails(fetchedAt: Date | null) {
   return fetchedAt !== null && Date.now() - fetchedAt.getTime() <= songMediaDetailsFreshnessMs;
+}
+
+function isFreshSongMediaPreview(fetchedAt: Date | null) {
+  return fetchedAt !== null && Date.now() - fetchedAt.getTime() <= songMediaPreviewFreshnessMs;
 }
 
 function pickCoverUrl(track: DeezerTrack) {

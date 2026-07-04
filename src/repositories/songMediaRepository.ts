@@ -33,7 +33,11 @@ export async function findSongMediaBySongIds(songIds: string[]) {
   });
 }
 
-export async function upsertSongMediaDetails(songId: string, details: SongMediaDetailsInput) {
+export async function upsertSongMediaDetails(
+  songId: string,
+  details: SongMediaDetailsInput,
+  fetchedAt = new Date()
+) {
   const data = {
     status: "available",
     deezerTrackId: BigInt(details.deezerTrackId),
@@ -46,7 +50,7 @@ export async function upsertSongMediaDetails(songId: string, details: SongMediaD
     trackLink: details.trackLink,
     isrc: details.isrc,
     rank: details.rank,
-    fetchedAt: new Date()
+    fetchedAt
   };
 
   return prisma.songMedia.upsert({
