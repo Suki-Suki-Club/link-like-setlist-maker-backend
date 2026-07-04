@@ -9,11 +9,13 @@
     "build": "rm -rf dist && tsc",
     "typecheck": "prisma generate && tsc --noEmit",
     "test": "prisma generate && env TEST_DATABASE_URL=\"${TEST_DATABASE_URL:-}\" TEST_DIRECT_URL=\"${TEST_DIRECT_URL:-${TEST_DATABASE_URL:-}}\" tsx scripts/assert-test-database.ts && env DATABASE_URL=\"${TEST_DATABASE_URL:-}\" DIRECT_URL=\"${TEST_DIRECT_URL:-${TEST_DATABASE_URL:-}}\" prisma migrate reset --force --skip-generate && env TEST_DATABASE_URL=\"${TEST_DATABASE_URL:-}\" TEST_DIRECT_URL=\"${TEST_DIRECT_URL:-${TEST_DATABASE_URL:-}}\" DATABASE_URL=\"${TEST_DATABASE_URL:-}\" DIRECT_URL=\"${TEST_DIRECT_URL:-${TEST_DATABASE_URL:-}}\" vitest run",
+    "dev:worker": "prisma generate && wrangler dev",
+    "deploy": "prisma generate && wrangler deploy",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev --name init",
     "db:seed": "tsx prisma/seed.ts",
-    "previews:backfill": "tsx scripts/backfill-song-previews.ts",
-    "deezer:resolve-track-ids": "tsx scripts/resolve-deezer-track-ids.ts"
+    "backfill:song-media": "tsx scripts/backfill-song-media.ts"
   },
   "keywords": [],
   "author": "",
@@ -23,17 +25,21 @@
     "@hono/node-server": "^2.0.5",
     "@hono/swagger-ui": "^0.6.1",
     "@hono/zod-openapi": "^1.4.0",
+    "@prisma/adapter-pg": "^6.19.3",
     "@prisma/client": "^6.19.3",
     "@supabase/server": "^1.1.0",
     "dotenv": "^17.4.2",
     "hono": "^4.12.26",
+    "pg": "^8.22.0",
     "zod": "^4.4.3"
   },
   "devDependencies": {
     "@types/node": "^26.0.0",
+    "@types/pg": "^8.20.0",
     "prisma": "^6.19.3",
     "tsx": "^4.22.4",
     "typescript": "^6.0.3",
-    "vitest": "^4.1.9"
+    "vitest": "^4.1.9",
+    "wrangler": "^4.106.0"
   }
 }

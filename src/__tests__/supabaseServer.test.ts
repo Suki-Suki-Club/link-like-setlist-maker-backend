@@ -29,6 +29,7 @@ describe("getSupabaseServerEnv", () => {
   });
 
   it("requires SUPABASE_PUBLISHABLE_KEY and SUPABASE_SECRET_KEY for Hono context clients", async () => {
+    process.env.DATABASE_URL = "postgresql://app-user:secret@db.example.com:5432/app";
     process.env.SUPABASE_URL = "https://project.supabase.co";
     delete process.env.SUPABASE_PUBLISHABLE_KEY;
     delete process.env.SUPABASE_SECRET_KEY;

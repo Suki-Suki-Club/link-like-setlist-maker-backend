@@ -18,40 +18,42 @@ model Unit {
 }
 
 model Song {
-  id                String        @id
-  title             String
-  titleJa           String
-  unitId            String
-  sortOrder         Int           @default(0)
-  releaseDate       DateTime?
-  deezerSearchTitle String?
-  deezerArtistName  String?
-  deezerArtistId    Int?
-  deezerTrackId     BigInt?
-  unit              Unit          @relation(fields: [unitId], references: [id], onDelete: Restrict)
-  items             SetlistItem[]
-  preview           SongPreview?
-  createdAt         DateTime      @default(now())
-  updatedAt         DateTime      @updatedAt
+  id          String        @id
+  title       String
+  titleJa     String
+  unitId      String
+  sortOrder   Int           @default(0)
+  releaseDate DateTime?
+  unit        Unit          @relation(fields: [unitId], references: [id], onDelete: Restrict)
+  items       SetlistItem[]
+  media       SongMedia?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
 
   @@index([unitId])
-  @@index([deezerTrackId])
 }
 
-model SongPreview {
-  songId            String   @id
-  status            String
-  deezerTrackId     BigInt?
-  deezerTrackTitle  String?
-  deezerArtistName  String?
-  deezerAlbumTitle  String?
-  duration          Int?
-  previewUrl        String?
-  trackLink         String?
-  isrc              String?
-  rank              Int?
-  fetchedAt         DateTime @default(now())
-  song              Song     @relation(fields: [songId], references: [id], onDelete: Cascade)
+model SongMedia {
+  songId        String    @id
+  status        String
+  deezerTrackId BigInt?
+  title         String?
+  artistName    String?
+  albumTitle    String?
+  duration      Int?
+  coverUrl      String?
+  previewUrl    String?
+  trackLink     String?
+  isrc          String?
+  rank          Int?
+  fetchedAt     DateTime?
+  song          Song      @relation(fields: [songId], references: [id], onDelete: Cascade)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@index([status])
+  @@index([status, fetchedAt])
+  @@index([deezerTrackId])
 }
 
 model Setlist {

@@ -6,7 +6,6 @@
     "unitId": "hasunosora",
     "sortOrder": 1,
     "releaseDate": "2023-03-29",
-    "deezerSearchTitle": "Dream Believers",
     "deezerTrackId": 2967993121
   },
   {
@@ -16,7 +15,6 @@
     "unitId": "hasunosora",
     "sortOrder": 2,
     "releaseDate": "2023-03-29",
-    "deezerSearchTitle": "On your mark",
     "deezerTrackId": 2967993131
   },
   {
@@ -26,7 +24,6 @@
     "unitId": "cerise-bouquet",
     "sortOrder": 3,
     "releaseDate": "2023-03-29",
-    "deezerSearchTitle": "Suisai Sekai",
     "deezerTrackId": 2967993141
   },
   {
@@ -35,7 +32,6 @@
     "unitId": "dollchestra",
     "sortOrder": 4,
     "releaseDate": "2023-03-29",
-    "deezerSearchTitle": "AWOKE",
     "titleJa": "AWOKE",
     "deezerTrackId": 2967993151
   },
@@ -45,7 +41,6 @@
     "unitId": "mira-cra-park",
     "sortOrder": 5,
     "releaseDate": "2023-03-29",
-    "deezerSearchTitle": "ド! ド! ド!",
     "titleJa": "ド! ド! ド!",
     "deezerTrackId": 2967993161
   },
@@ -56,7 +51,6 @@
     "unitId": "hasunosora",
     "sortOrder": 6,
     "releaseDate": "2023-03-29",
-    "deezerSearchTitle": "永遠のEuphoria",
     "deezerTrackId": 2967993171
   },
   {
@@ -83,7 +77,6 @@
     "unitId": "cerise-bouquet",
     "sortOrder": 9,
     "releaseDate": "2023-04-26",
-    "deezerSearchTitle": "Mix Shake",
     "titleJa": "Mix shake!!",
     "deezerTrackId": 2967994081
   },
@@ -139,7 +132,6 @@
     "unitId": "cerise-bouquet",
     "sortOrder": 15,
     "releaseDate": "2023-06-14",
-    "deezerSearchTitle": "Holiday∞Holiday",
     "deezerTrackId": 2967994891
   },
   {
@@ -373,8 +365,7 @@
     "titleJa": "異次元★BIGBANG",
     "unitId": "collaboration",
     "sortOrder": 41,
-    "releaseDate": "2023-12-06",
-    "deezerArtistName": "Kaho Hinoshita"
+    "releaseDate": "2023-12-06"
   },
   {
     "id": "trick-and-cute",
@@ -392,7 +383,6 @@
     "unitId": "hasunosora",
     "sortOrder": 43,
     "releaseDate": "2024-01-17",
-    "deezerSearchTitle": "Tsubasa La Liberte",
     "deezerTrackId": 2591204472
   },
   {
@@ -572,7 +562,6 @@
     "unitId": "collaboration",
     "sortOrder": 68,
     "releaseDate": "2024-09-20",
-    "deezerArtistName": "Kaho Hinoshita",
     "titleJa": "Bring the LOVE!",
     "deezerTrackId": 2958146101
   },
@@ -582,8 +571,7 @@
     "unitId": "mira-cra-park",
     "sortOrder": 69,
     "releaseDate": "2024-10-02",
-    "deezerSearchTitle": "ファンファーレ！！！",
-    "titleJa": "Fanfare!!!",
+    "titleJa": "ファンファーレ！！！",
     "deezerTrackId": 2971541641
   },
   {
@@ -862,8 +850,6 @@
     "unitId": "solo",
     "sortOrder": 129,
     "releaseDate": "2025-06-04",
-    "deezerArtistId": 303767221,
-    "deezerArtistName": "Kozue Otomune",
     "titleJa": "be proud",
     "deezerTrackId": 3349112351
   },
@@ -874,7 +860,6 @@
     "unitId": "solo",
     "sortOrder": 130,
     "releaseDate": "2025-06-04",
-    "deezerArtistName": "Tsuzuri Yugiri",
     "deezerTrackId": 3349116991
   },
   {
@@ -884,7 +869,6 @@
     "unitId": "solo",
     "sortOrder": 131,
     "releaseDate": "2025-06-04",
-    "deezerArtistName": "Megumi Fujishima",
     "deezerTrackId": 3349116421
   },
   {
@@ -1073,7 +1057,6 @@
     "unitId": "solo",
     "sortOrder": 152,
     "releaseDate": "2025-11-26",
-    "deezerArtistName": "Sayaka Murano",
     "titleJa": "Runway",
     "deezerTrackId": 3614635902
   },
@@ -1092,7 +1075,7 @@
     "unitId": "ruri-and-to",
     "sortOrder": 154,
     "releaseDate": "2025-12-03",
-    "titleJa": "Heisei Galz!!!",
+    "titleJa": "平成ギャルズ!!!!",
     "deezerTrackId": 3570115751
   },
   {
@@ -1155,8 +1138,7 @@
     "titleJa": "ハロめぐ賛歌",
     "unitId": "solo",
     "sortOrder": 161,
-    "releaseDate": "2026-01-11",
-    "deezerArtistName": "Megumi Fujishima"
+    "releaseDate": "2026-01-11"
   },
   {
     "id": "berry-merry-go-round",
@@ -1390,7 +1372,7 @@
     "unitId": "solo",
     "sortOrder": 190,
     "releaseDate": "2026-06-03",
-    "deezerTrackId": null
+    "deezerTrackId": 4058146221
   },
   {
     "id": "bless-you",
@@ -1399,7 +1381,7 @@
     "unitId": "solo",
     "sortOrder": 191,
     "releaseDate": "2026-06-03",
-    "deezerTrackId": null
+    "deezerTrackId": 4058161051
   },
   {
     "id": "mijinko-transformation",
@@ -1408,6 +1390,6 @@
     "unitId": "solo",
     "sortOrder": 192,
     "releaseDate": "2026-06-03",
-    "deezerTrackId": null
+    "deezerTrackId": 4058160811
   }
 ]

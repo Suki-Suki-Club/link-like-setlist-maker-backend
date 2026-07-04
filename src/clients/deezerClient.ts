@@ -29,16 +29,14 @@ const DeezerTrackSchema = z.object({
     .object({
       id: z.number().int().optional(),
       title: z.string(),
+      cover_medium: z.string().nullable().optional(),
+      cover_big: z.string().nullable().optional(),
+      cover_xl: z.string().nullable().optional(),
       type: z.string().optional()
     })
     .nullable()
     .optional(),
   type: z.string().optional()
-});
-
-const DeezerSearchSchema = z.object({
-  data: z.array(DeezerTrackSchema),
-  total: z.number().int().optional()
 });
 
 export type DeezerTrack = z.infer<typeof DeezerTrackSchema>;
@@ -69,26 +67,4 @@ async function requestJson(path: string) {
 export async function getDeezerTrack(trackId: number) {
   const json = await requestJson(`/track/${trackId}`);
   return DeezerTrackSchema.parse(json);
-}
-
-export async function searchDeezerTracks(query: string, limit = config.deezerSearchLimit) {
-  const params = new URLSearchParams({
-    q: query,
-    limit: String(limit)
-  });
-  const json = await requestJson(`/search?${params.toString()}`);
-  return DeezerSearchSchema.parse(json).data;
-}
-
-export async function getDeezerArtistTopTracks(artistId: number, limit = 50) {
-  const params = new URLSearchParams({
-    limit: String(limit)
-  });
-  const json = await requestJson(`/artist/${artistId}/top?${params.toString()}`);
-  return DeezerSearchSchema.parse(json).data;
-}
-
-export async function getDeezerAlbumTracks(albumId: number) {
-  const json = await requestJson(`/album/${albumId}/tracks`);
-  return DeezerSearchSchema.parse(json).data;
 }

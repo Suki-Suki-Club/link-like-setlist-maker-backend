@@ -40,20 +40,16 @@ function isSetlistCreate(c: Context) {
   return c.req.method.toUpperCase() === "POST" && getPath(c) === "/api/setlists";
 }
 
-function isForcedPreviewRefresh(c: Context) {
-  return (
-    c.req.method.toUpperCase() === "GET" &&
-    /^\/api\/songs\/[^/]+\/preview$/.test(getPath(c)) &&
-    c.req.query("refresh") === "true"
-  );
+function isCatalogBootstrap(c: Context) {
+  return c.req.method.toUpperCase() === "GET" && getPath(c) === "/api/catalog/bootstrap";
 }
 
-function isSongPreviewLookup(c: Context) {
-  return c.req.method.toUpperCase() === "GET" && /^\/api\/songs\/[^/]+\/preview$/.test(getPath(c));
+function isSongMediaLookup(c: Context) {
+  return c.req.method.toUpperCase() === "GET" && /^\/api\/song-media\/[^/]+$/.test(getPath(c));
 }
 
 function requiresBackendApiToken(c: Context) {
-  return isSetlistCreate(c) || isSongPreviewLookup(c);
+  return isSetlistCreate(c) || isCatalogBootstrap(c) || isSongMediaLookup(c);
 }
 
 function hasValidBackendApiToken(c: Context) {
@@ -107,17 +103,6 @@ export function createPublicApiSecurityMiddleware(): MiddlewareHandler {
         `setlist-create:${clientIp}`,
         config.setlistCreateRateLimitMax,
         config.setlistCreateRateLimitWindowMs
-      )
-    ) {
-      return c.json(errorBody("RATE_LIMITED", "Too many requests"), 429);
-    }
-
-    if (
-      isForcedPreviewRefresh(c) &&
-      isRateLimited(
-        `preview-refresh:${clientIp}`,
-        config.previewRefreshRateLimitMax,
-        config.previewRefreshRateLimitWindowMs
       )
     ) {
       return c.json(errorBody("RATE_LIMITED", "Too many requests"), 429);

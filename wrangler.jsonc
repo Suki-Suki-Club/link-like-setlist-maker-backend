@@ -1,0 +1,28 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "link-like-setlist-maker-backend",
+  "account_id": "6d892072a532ebdf09c8f3d1f9315c17",
+  "main": "src/worker.ts",
+  "compatibility_date": "2026-07-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "routes": [
+    {
+      "pattern": "api.link-like-setlist-maker.sukisuki.club",
+      "custom_domain": true
+    }
+  ],
+  "hyperdrive": [
+    {
+      "binding": "HYPERDRIVE",
+      "id": "b321b3ee1df446869b8f8c650a5994b9"
+    }
+  ],
+  "vars": {
+    "CORS_ORIGIN": "https://link-like-setlist-maker.sukisuki.club",
+    "DEEZER_API_BASE_URL": "https://api.deezer.com",
+    "DEEZER_REQUEST_TIMEOUT_MS": "5000",
+    "MAX_JSON_BODY_BYTES": "16384",
+    "SETLIST_CREATE_RATE_LIMIT_MAX": "20",
+    "SETLIST_CREATE_RATE_LIMIT_WINDOW_MS": "60000"
+  }
+}
