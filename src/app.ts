@@ -47,12 +47,22 @@ app.get("/docs", swaggerUI({ url: "/openapi.json" }));
 
 app.notFound((c) => c.json(errorBody("NOT_FOUND", "Route not found"), 404));
 
+function isDatabaseConnectionError(error: unknown) {
+  const message = error instanceof Error ? error.message : String(error);
+  return /connection|pool|ECONNREFUSED|ETIMEDOUT/i.test(message);
+}
+
 app.onError((error, c) => {
   if (error instanceof AppError) {
     return c.json(errorBody(error.code, error.message, error.details), error.status);
   }
 
   console.error(error);
+
+  if (isDatabaseConnectionError(error)) {
+    return c.json(errorBody("SERVICE_UNAVAILABLE", "Database is temporarily unavailable"), 503);
+  }
+
   return c.json(errorBody("INTERNAL_SERVER_ERROR", "Unexpected server error"), 500);
 });
 

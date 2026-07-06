@@ -89,7 +89,7 @@ beforeEach(() => {
 });
 
 describe("songMediaService", () => {
-  it("returns fresh persisted media details without calling Deezer", async () => {
+  it("always re-resolves from Deezer even when persisted media looks fresh, since previewUrl lifetime is unpredictable", async () => {
     findSongMediaMock.mockResolvedValue(
       createSongMedia("dream-believers", 2967993121, "available", {
         title: "Dream Believers",
@@ -97,48 +97,11 @@ describe("songMediaService", () => {
         albumTitle: "Dream Believers",
         duration: 284,
         coverUrl: "https://e-cdns-images.dzcdn.net/images/cover/dream-xl.jpg",
-        previewUrl: "https://cdnt-preview.dzcdn.net/dream.mp3",
+        previewUrl: "https://cdnt-preview.dzcdn.net/stale-dream.mp3",
         trackLink: "https://www.deezer.com/track/2967993121",
         isrc: "JPI102300001",
         rank: 41585,
-        fetchedAt: new Date(Date.now() - 30 * 60 * 1000)
-      })
-    );
-
-    const result = await getSongMedia("dream-believers");
-
-    expect(result).toEqual({
-      songId: "dream-believers",
-      status: "available",
-      media: {
-        deezerTrackId: 2967993121,
-        title: "Dream Believers",
-        artistName: "蓮ノ空女学院スクールアイドルクラブ",
-        albumTitle: "Dream Believers",
-        duration: 284,
-        coverUrl: "https://e-cdns-images.dzcdn.net/images/cover/dream-xl.jpg",
-        previewUrl: "https://cdnt-preview.dzcdn.net/dream.mp3",
-        trackLink: "https://www.deezer.com/track/2967993121",
-        isrc: "JPI102300001",
-        rank: 41585
-      }
-    });
-    expect(getDeezerTrackMock).not.toHaveBeenCalled();
-  });
-
-  it("refreshes persisted media when only the preview URL is older than the playback freshness window", async () => {
-    findSongMediaMock.mockResolvedValue(
-      createSongMedia("dream-believers", 2967993121, "available", {
-        title: "Dream Believers",
-        artistName: "蓮ノ空女学院スクールアイドルクラブ",
-        albumTitle: "Dream Believers",
-        duration: 284,
-        coverUrl: "https://e-cdns-images.dzcdn.net/images/cover/dream-xl.jpg",
-        previewUrl: "https://cdnt-preview.dzcdn.net/expired-dream.mp3",
-        trackLink: "https://www.deezer.com/track/2967993121",
-        isrc: "JPI102300001",
-        rank: 41585,
-        fetchedAt: new Date(Date.now() - 2 * 60 * 60 * 1000)
+        fetchedAt: new Date(Date.now() - 60 * 1000)
       })
     );
     getDeezerTrackMock.mockResolvedValue(
