@@ -2,6 +2,7 @@ import { AsyncLocalStorage } from "node:async_hooks";
 import { PrismaClient } from "@prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import type { MiddlewareHandler } from "hono";
+import type { PoolConfig } from "pg";
 
 export type RuntimeEnv = {
   BACKEND_API_TOKEN?: string;
@@ -51,7 +52,12 @@ type ExecutionContextLike = {
 };
 
 const runtimeContextStorage = new AsyncLocalStorage<RuntimeContext>();
-const workerPrismaByConnectionString = new Map<string, PrismaClient>();
+const workerPrismaPoolConfig = {
+  max: 1,
+  idleTimeoutMillis: 1000,
+  connectionTimeoutMillis: 5000,
+  allowExitOnIdle: true
+} satisfies Pick<PoolConfig, "allowExitOnIdle" | "connectionTimeoutMillis" | "idleTimeoutMillis" | "max">;
 
 function envValue(env: RuntimeEnv, name: keyof RuntimeEnv) {
   const value = env[name];
@@ -82,7 +88,7 @@ function stringFromEnv(env: RuntimeEnv, name: keyof RuntimeEnv) {
 }
 
 export function createAppConfig(env: RuntimeEnv = {}): AppConfig {
-  const databaseUrl = stringFromEnv(env, "DATABASE_URL");
+  const databaseUrl = env.HYPERDRIVE?.connectionString ?? stringFromEnv(env, "DATABASE_URL");
   const backendApiToken = envValue(env, "BACKEND_API_TOKEN") ?? "";
   const nodeEnv = envValue(env, "NODE_ENV") ?? process.env.NODE_ENV;
 
@@ -136,22 +142,22 @@ export async function runWithRuntimeContext<T>(
 ) {
   const config = createAppConfig(env);
   const connectionString = env.HYPERDRIVE?.connectionString ?? config.databaseUrl;
-  let prisma = workerPrismaByConnectionString.get(connectionString);
-
-  if (!prisma) {
-    const adapter = new PrismaPg({
-      connectionString,
-      ssl: {
-        rejectUnauthorized: false,
-      },
-    });
-    prisma = new PrismaClient({ adapter });
-    workerPrismaByConnectionString.set(connectionString, prisma);
-  }
-
-  return runtimeContextStorage.run({ env, prisma }, async () => {
-    return callback();
+  const adapter = new PrismaPg({
+    connectionString,
+    ssl: {
+      rejectUnauthorized: false,
+    },
+    ...workerPrismaPoolConfig,
   });
+  const prisma = new PrismaClient({ adapter });
+
+  try {
+    return await runtimeContextStorage.run({ env, prisma }, async () => {
+      return callback();
+    });
+  } finally {
+    await prisma.$disconnect();
+  }
 }
 
 export function createRuntimeMiddleware(): MiddlewareHandler<{

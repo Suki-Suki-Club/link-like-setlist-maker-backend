@@ -26,10 +26,13 @@ type CachedTrackResult = {
 };
 
 export const songMediaDetailsFreshnessMs = 30 * 24 * 60 * 60 * 1000;
-// Deezer preview URLs are signed and short-lived; keep playback freshness much
-// shorter than stable title/artist/cover metadata.
-export const songMediaPreviewFreshnessMs = 60 * 60 * 1000;
-const successCacheTtlMs = songMediaPreviewFreshnessMs;
+// Deezer preview URLs are Akamai-signed and their actual lifetime varies by
+// track (observed as short as ~15 minutes), well under what was previously
+// assumed. There is no safe fixed TTL to cache them for playback, so the
+// single-song lookup path always re-resolves from Deezer; this in-memory
+// cache only dedupes bursts of near-simultaneous requests for the same
+// track, not real reuse across a meaningful time window.
+const successCacheTtlMs = 60 * 1000;
 const failureCacheTtlMs = 5 * 60 * 1000;
 const deezerRetryCount = 2;
 const mediaLookupConcurrency = 5;
@@ -90,18 +93,11 @@ async function resolveSongMedia(songId: string, media: SongMedia | null): Promis
     return unavailableSongMedia(songId);
   }
 
-  const persistedMedia = mediaPayloadFromPersistedRow(media);
-  if (persistedMedia && isFreshSongMediaDetails(media.fetchedAt) && isFreshSongMediaPreview(media.fetchedAt)) {
-    return {
-      songId,
-      status: "available",
-      media: persistedMedia
-    };
-  }
-
-  const resolvedMedia = await resolveDeezerTrack(Number(media.deezerTrackId), {
-    bypassCache: persistedMedia !== null && !isFreshSongMediaPreview(media.fetchedAt)
-  });
+  // previewUrl freshness cannot be inferred from fetchedAt (see cache TTL
+  // comment above), so playback always re-resolves from Deezer here. Stable
+  // fields (title/cover/etc.) get refreshed as a side effect, which is fine
+  // since they don't change.
+  const resolvedMedia = await resolveDeezerTrack(Number(media.deezerTrackId));
   if (!resolvedMedia.media) {
     return unavailableSongMedia(songId);
   }
@@ -115,13 +111,10 @@ async function resolveSongMedia(songId: string, media: SongMedia | null): Promis
   };
 }
 
-async function resolveDeezerTrack(
-  trackId: number,
-  options: { bypassCache?: boolean } = {}
-): Promise<CachedTrackResult> {
+async function resolveDeezerTrack(trackId: number): Promise<CachedTrackResult> {
   const now = Date.now();
   const cached = trackCache.get(trackId);
-  if (!options.bypassCache && cached && cached.expiresAt > now) {
+  if (cached && cached.expiresAt > now) {
     return cached;
   }
 
@@ -189,14 +182,6 @@ function mediaPayloadFromPersistedRow(media: SongMedia): SongMediaPayload | null
     isrc: media.isrc,
     rank: media.rank
   };
-}
-
-function isFreshSongMediaDetails(fetchedAt: Date | null) {
-  return fetchedAt !== null && Date.now() - fetchedAt.getTime() <= songMediaDetailsFreshnessMs;
-}
-
-function isFreshSongMediaPreview(fetchedAt: Date | null) {
-  return fetchedAt !== null && Date.now() - fetchedAt.getTime() <= songMediaPreviewFreshnessMs;
 }
 
 function pickCoverUrl(track: DeezerTrack) {
