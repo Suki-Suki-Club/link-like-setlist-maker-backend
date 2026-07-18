@@ -32,10 +32,11 @@ async function readSeedJson<T>(fileName: string): Promise<T> {
 }
 
 export async function seedCatalog() {
-  const [series, units, songs] = await Promise.all([
+  const [series, units, songs, deezerTrackOverrides] = await Promise.all([
     readSeedJson<SeriesSeed[]>("series.json"),
     readSeedJson<UnitSeed[]>("units.json"),
-    readSeedJson<SongSeed[]>("songs.json")
+    readSeedJson<SongSeed[]>("songs.json"),
+    readSeedJson<Record<string, number | null>>("deezer-track-overrides.json")
   ]);
 
   await prisma.$transaction(
@@ -57,6 +58,12 @@ export async function seedCatalog() {
       }
 
       for (const song of songs) {
+        // overrides は人間による確定値として songs.json より優先する
+        // (null は「Deezer に存在しないと確認済み」を意味する)
+        const deezerTrackId = Object.hasOwn(deezerTrackOverrides, song.id)
+          ? deezerTrackOverrides[song.id]
+          : song.deezerTrackId;
+
         const songData = {
           id: song.id,
           title: song.title,
@@ -75,13 +82,13 @@ export async function seedCatalog() {
         await tx.songMedia.upsert({
           where: { songId: song.id },
           update: {
-            status: song.deezerTrackId == null ? "unavailable" : "available",
-            deezerTrackId: song.deezerTrackId == null ? null : BigInt(song.deezerTrackId)
+            status: deezerTrackId == null ? "unavailable" : "available",
+            deezerTrackId: deezerTrackId == null ? null : BigInt(deezerTrackId)
           },
           create: {
             songId: song.id,
-            status: song.deezerTrackId == null ? "unavailable" : "available",
-            deezerTrackId: song.deezerTrackId == null ? null : BigInt(song.deezerTrackId)
+            status: deezerTrackId == null ? "unavailable" : "available",
+            deezerTrackId: deezerTrackId == null ? null : BigInt(deezerTrackId)
           }
         });
       }

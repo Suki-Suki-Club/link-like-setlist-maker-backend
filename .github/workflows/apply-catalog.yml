@@ -1,0 +1,30 @@
+name: Apply catalog to database
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "prisma/seed-data/**"
+  workflow_dispatch:
+
+concurrency:
+  group: apply-catalog
+  cancel-in-progress: false
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      DIRECT_URL: ${{ secrets.DIRECT_URL }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Seed catalog (Series/Unit/Song/SongMedia upsert)
+        run: npm run db:seed
+      - name: Backfill Deezer media details
+        run: npm run backfill:song-media
