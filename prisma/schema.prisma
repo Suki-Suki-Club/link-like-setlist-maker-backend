@@ -25,7 +25,6 @@ model Song {
   sortOrder   Int           @default(0)
   releaseDate DateTime?
   unit        Unit          @relation(fields: [unitId], references: [id], onDelete: Restrict)
-  items       SetlistItem[]
   media       SongMedia?
   createdAt   DateTime      @default(now())
   updatedAt   DateTime      @updatedAt
@@ -57,23 +56,14 @@ model SongMedia {
 }
 
 model Setlist {
-  id          String        @id @default(cuid())
-  title       String
-  description String?
-  items       SetlistItem[]
-  createdAt   DateTime      @default(now())
-  updatedAt   DateTime      @updatedAt
-}
+  id             String   @id @default(cuid())
+  title          String
+  description    String?
+  songIds        String[] @default([])
+  contentHash    String?  @unique
+  lastAccessedAt DateTime @default(now())
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
 
-model SetlistItem {
-  id        String  @id @default(cuid())
-  setlistId String
-  songId    String
-  position  Int
-  memo      String?
-  setlist   Setlist @relation(fields: [setlistId], references: [id], onDelete: Cascade)
-  song      Song    @relation(fields: [songId], references: [id], onDelete: Restrict)
-
-  @@unique([setlistId, position])
-  @@index([songId])
+  @@index([lastAccessedAt])
 }

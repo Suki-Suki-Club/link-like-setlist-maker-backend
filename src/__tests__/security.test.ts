@@ -26,7 +26,9 @@ const { prismaMock } = vi.hoisted(() => {
     id: "existing-setlist",
     title: "Existing setlist",
     description: null,
-    items: [],
+    songIds: [],
+    contentHash: null,
+    lastAccessedAt: now,
     createdAt: now,
     updatedAt: now
   };
@@ -34,13 +36,11 @@ const { prismaMock } = vi.hoisted(() => {
   const prismaMock = {
     setlist: {
       findMany: async () => [setlist],
-      findUnique: async ({ where }: { where: { id: string } }) => (where.id === setlist.id ? { id: setlist.id } : null),
+      findUnique: async ({ where }: { where: { id?: string; contentHash?: string } }) =>
+        where.id === setlist.id ? setlist : null,
       create: async () => setlist,
       update: async () => setlist,
       delete: async () => setlist
-    },
-    setlistItem: {
-      deleteMany: async () => ({ count: 0 })
     },
     song: {
       findMany: async ({ where, select }: { where?: { id?: { in?: string[] } }; select?: { id?: boolean } } = {}) => {
