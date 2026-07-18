@@ -2,76 +2,91 @@
   {
     "id": "hasunosora",
     "name": "蓮ノ空女学院スクールアイドルクラブ",
+    "seriesId": "hasunosora",
     "sortOrder": 1
   },
   {
     "id": "cerise-bouquet",
     "name": "スリーズブーケ",
+    "seriesId": "hasunosora",
     "sortOrder": 2
   },
   {
     "id": "dollchestra",
     "name": "DOLLCHESTRA",
+    "seriesId": "hasunosora",
     "sortOrder": 3
   },
   {
     "id": "mira-cra-park",
     "name": "みらくらぱーく！",
+    "seriesId": "hasunosora",
     "sortOrder": 4
   },
   {
     "id": "edel-note",
     "name": "Edel Note",
+    "seriesId": "hasunosora",
     "sortOrder": 5
   },
   {
     "id": "rurino-to-yukai-na-tsuzuri-tachi",
     "name": "るりのとゆかいなつづりたち",
+    "seriesId": "hasunosora",
     "sortOrder": 6
   },
   {
     "id": "kahomegu-gelato",
     "name": "かほめぐじぇらーと",
+    "seriesId": "hasunosora",
     "sortOrder": 7
   },
   {
     "id": "hasu-no-kyuujitsu",
     "name": "蓮ノ休日",
+    "seriesId": "hasunosora",
     "sortOrder": 8
   },
   {
     "id": "ruri-and-to",
     "name": "Ruri&To",
+    "seriesId": "hasunosora",
     "sortOrder": 9
   },
   {
     "id": "PRINCESS",
     "name": "PRINCEε>ε>",
+    "seriesId": "hasunosora",
     "sortOrder": 10
   },
   {
     "id": "solo",
     "name": "ソロ",
+    "seriesId": "hasunosora",
     "sortOrder": 11
   },
   {
     "id": "collaboration",
     "name": "コラボレーション",
+    "seriesId": "hasunosora",
     "sortOrder": 12
   },
   {
     "id": "hasu-no-daisankaku",
     "name": "蓮ノ大三角 ",
+    "seriesId": "hasunosora",
     "sortOrder": 13
   },
   {
     "id": "hasu-no-shousankaku",
     "name": "蓮ノ小三角",
+    "seriesId": "hasunosora",
     "sortOrder": 14
   },
   {
     "id": "hasu-no-sanrenka",
     "name": "蓮ノ三連華",
+    "seriesId": "hasunosora",
     "sortOrder": 15
   }
 ]

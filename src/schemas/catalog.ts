@@ -1,11 +1,21 @@
 import { z } from "@hono/zod-openapi";
 import { SongMediaResponseSchema } from "./songMedia.js";
 
+export const SeriesSchema = z
+  .object({
+    id: z.string().openapi({ example: "hasunosora" }),
+    name: z.string().openapi({ example: "蓮ノ空女学院スクールアイドルクラブ" }),
+    sortOrder: z.number().int().openapi({ example: 5 })
+  })
+  .openapi("Series");
+
 export const UnitSchema = z
   .object({
     id: z.string().openapi({ example: "hasunosora" }),
     name: z.string().openapi({ example: "蓮ノ空女学院スクールアイドルクラブ" }),
-    sortOrder: z.number().int().openapi({ example: 1 })
+    seriesId: z.string().openapi({ example: "hasunosora" }),
+    sortOrder: z.number().int().openapi({ example: 1 }),
+    series: SeriesSchema
   })
   .openapi("Unit");
 

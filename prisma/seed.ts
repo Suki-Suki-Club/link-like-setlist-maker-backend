@@ -3,9 +3,16 @@ import { join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { prisma } from "../src/db/client.js";
 
+type SeriesSeed = {
+  id: string;
+  name: string;
+  sortOrder: number;
+};
+
 type UnitSeed = {
   id: string;
   name: string;
+  seriesId: string;
   sortOrder: number;
 };
 
@@ -25,13 +32,22 @@ async function readSeedJson<T>(fileName: string): Promise<T> {
 }
 
 export async function seedCatalog() {
-  const [units, songs] = await Promise.all([
+  const [series, units, songs] = await Promise.all([
+    readSeedJson<SeriesSeed[]>("series.json"),
     readSeedJson<UnitSeed[]>("units.json"),
     readSeedJson<SongSeed[]>("songs.json")
   ]);
 
   await prisma.$transaction(
     async (tx) => {
+      for (const seriesEntry of series) {
+        await tx.series.upsert({
+          where: { id: seriesEntry.id },
+          update: seriesEntry,
+          create: seriesEntry
+        });
+      }
+
       for (const unit of units) {
         await tx.unit.upsert({
           where: { id: unit.id },

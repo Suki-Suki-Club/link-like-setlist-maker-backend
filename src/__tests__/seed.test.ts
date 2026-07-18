@@ -3,6 +3,7 @@ import { join } from "node:path";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const transactionMock = vi.fn();
+const seriesUpsertMock = vi.fn(async () => undefined);
 const unitUpsertMock = vi.fn(async () => undefined);
 const songUpsertMock = vi.fn(async () => undefined);
 const songMediaUpsertMock = vi.fn(async () => undefined);
@@ -15,12 +16,14 @@ vi.mock("../db/client.js", () => ({
 
 beforeEach(() => {
   transactionMock.mockReset();
+  seriesUpsertMock.mockClear();
   unitUpsertMock.mockClear();
   songUpsertMock.mockClear();
   songMediaUpsertMock.mockClear();
 
   transactionMock.mockImplementation(async (callback: (tx: unknown) => Promise<unknown>, options?: unknown) => {
     await callback({
+      series: { upsert: seriesUpsertMock },
       unit: { upsert: unitUpsertMock },
       song: { upsert: songUpsertMock },
       songMedia: { upsert: songMediaUpsertMock }
@@ -54,6 +57,7 @@ describe("seedCatalog", () => {
       maxWait: 10_000,
       timeout: 60_000
     });
+    expect(seriesUpsertMock).toHaveBeenCalled();
     expect(unitUpsertMock).toHaveBeenCalled();
     expect(songUpsertMock).toHaveBeenCalled();
     const perenialSongUpsert = songUpsertMock.mock.calls

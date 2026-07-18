@@ -1,0 +1,27 @@
+[
+  {
+    "id": "muse",
+    "name": "μ's",
+    "sortOrder": 1
+  },
+  {
+    "id": "aqours",
+    "name": "Aqours",
+    "sortOrder": 2
+  },
+  {
+    "id": "nijigasaki",
+    "name": "虹ヶ咲学園スクールアイドル同好会",
+    "sortOrder": 3
+  },
+  {
+    "id": "liella",
+    "name": "Liella!",
+    "sortOrder": 4
+  },
+  {
+    "id": "hasunosora",
+    "name": "蓮ノ空女学院スクールアイドルクラブ",
+    "sortOrder": 5
+  }
+]
