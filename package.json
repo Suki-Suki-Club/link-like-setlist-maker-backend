@@ -28,8 +28,11 @@
     "@prisma/adapter-pg": "^6.19.3",
     "@prisma/client": "^6.19.3",
     "@supabase/server": "^1.1.0",
+    "cheerio": "^1.2.0",
     "dotenv": "^17.4.2",
     "hono": "^4.12.26",
+    "kuroshiro": "^1.2.0",
+    "kuroshiro-analyzer-kuromoji": "^1.1.0",
     "pg": "^8.22.0",
     "zod": "^4.4.3"
   },

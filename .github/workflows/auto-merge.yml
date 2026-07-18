@@ -1,0 +1,24 @@
+name: Auto-merge catalog-sync PRs
+
+# catalog-sync ジョブが「全変更が高確信度」と判定した PR (label: catalog-sync:auto) だけを
+# CI 通過後に自動マージする。needs-review ラベルの PR は人間のレビュー待ち。
+# 事前条件: リポジトリ設定で "Allow auto-merge" を有効にしておくこと。
+
+on:
+  pull_request:
+    types: [labeled, opened, synchronize]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  enable-auto-merge:
+    if: contains(github.event.pull_request.labels.*.name, 'catalog-sync:auto')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enable auto-merge (squash)
+        run: gh pr merge --auto --squash "$PR_URL"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

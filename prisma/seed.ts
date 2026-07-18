@@ -3,9 +3,16 @@ import { join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { prisma } from "../src/db/client.js";
 
+type SeriesSeed = {
+  id: string;
+  name: string;
+  sortOrder: number;
+};
+
 type UnitSeed = {
   id: string;
   name: string;
+  seriesId: string;
   sortOrder: number;
 };
 
@@ -25,13 +32,23 @@ async function readSeedJson<T>(fileName: string): Promise<T> {
 }
 
 export async function seedCatalog() {
-  const [units, songs] = await Promise.all([
+  const [series, units, songs, deezerTrackOverrides] = await Promise.all([
+    readSeedJson<SeriesSeed[]>("series.json"),
     readSeedJson<UnitSeed[]>("units.json"),
-    readSeedJson<SongSeed[]>("songs.json")
+    readSeedJson<SongSeed[]>("songs.json"),
+    readSeedJson<Record<string, number | null>>("deezer-track-overrides.json")
   ]);
 
   await prisma.$transaction(
     async (tx) => {
+      for (const seriesEntry of series) {
+        await tx.series.upsert({
+          where: { id: seriesEntry.id },
+          update: seriesEntry,
+          create: seriesEntry
+        });
+      }
+
       for (const unit of units) {
         await tx.unit.upsert({
           where: { id: unit.id },
@@ -41,6 +58,12 @@ export async function seedCatalog() {
       }
 
       for (const song of songs) {
+        // overrides は人間による確定値として songs.json より優先する
+        // (null は「Deezer に存在しないと確認済み」を意味する)
+        const deezerTrackId = Object.hasOwn(deezerTrackOverrides, song.id)
+          ? deezerTrackOverrides[song.id]
+          : song.deezerTrackId;
+
         const songData = {
           id: song.id,
           title: song.title,
@@ -59,13 +82,13 @@ export async function seedCatalog() {
         await tx.songMedia.upsert({
           where: { songId: song.id },
           update: {
-            status: song.deezerTrackId == null ? "unavailable" : "available",
-            deezerTrackId: song.deezerTrackId == null ? null : BigInt(song.deezerTrackId)
+            status: deezerTrackId == null ? "unavailable" : "available",
+            deezerTrackId: deezerTrackId == null ? null : BigInt(deezerTrackId)
           },
           create: {
             songId: song.id,
-            status: song.deezerTrackId == null ? "unavailable" : "available",
-            deezerTrackId: song.deezerTrackId == null ? null : BigInt(song.deezerTrackId)
+            status: deezerTrackId == null ? "unavailable" : "available",
+            deezerTrackId: deezerTrackId == null ? null : BigInt(deezerTrackId)
           }
         });
       }

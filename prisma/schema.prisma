@@ -8,13 +8,26 @@ datasource db {
   directUrl = env("DIRECT_URL")
 }
 
-model Unit {
+model Series {
   id        String   @id
   name      String
   sortOrder Int      @default(0)
+  units     Unit[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Unit {
+  id        String   @id
+  name      String
+  seriesId  String
+  sortOrder Int      @default(0)
+  series    Series   @relation(fields: [seriesId], references: [id], onDelete: Restrict)
   songs     Song[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@index([seriesId])
 }
 
 model Song {

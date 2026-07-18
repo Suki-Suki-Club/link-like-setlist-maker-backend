@@ -1,10 +1,20 @@
-import type { SongWithUnit } from "../repositories/catalogRepository.js";
+import type { SongWithUnit, UnitWithSeries } from "../repositories/catalogRepository.js";
 
-export function presentUnit(unit: { id: string; name: string; sortOrder: number }) {
+export function presentSeries(series: { id: string; name: string; sortOrder: number }) {
+  return {
+    id: series.id,
+    name: series.name,
+    sortOrder: series.sortOrder
+  };
+}
+
+export function presentUnit(unit: UnitWithSeries) {
   return {
     id: unit.id,
     name: unit.name,
-    sortOrder: unit.sortOrder
+    seriesId: unit.seriesId,
+    sortOrder: unit.sortOrder,
+    series: presentSeries(unit.series)
   };
 }
 

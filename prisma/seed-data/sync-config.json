@@ -1,0 +1,18 @@
+{
+  "enabledSeries": ["hasunosora"],
+  "excludeTrackPatterns": ["\\([^)]*ver\\.?\\)$"],
+  "excludeReleasePatterns": ["オリジナルサウンドトラック", "original soundtrack", "tribute album"],
+  "deezer": {
+    "autoApplyScore": 0.9,
+    "autoApplyMargin": 0.15,
+    "reviewScore": 0.6,
+    "searchIntervalMs": 1100
+  },
+  "seriesArtistAliases": {
+    "muse": ["μ's"],
+    "aqours": ["Aqours"],
+    "nijigasaki": ["虹ヶ咲学園スクールアイドル同好会", "Nijigasaki High School Idol Club"],
+    "liella": ["Liella!"],
+    "hasunosora": ["蓮ノ空女学院スクールアイドルクラブ", "Hasunosora Jogakuin School Idol Club"]
+  }
+}

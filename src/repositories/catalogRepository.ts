@@ -1,14 +1,22 @@
 import type { Prisma } from "@prisma/client";
 import { prisma } from "../db/client.js";
 
+const unitInclude = {
+  series: true
+} satisfies Prisma.UnitInclude;
+
 const songInclude = {
-  unit: true
+  unit: {
+    include: unitInclude
+  }
 } satisfies Prisma.SongInclude;
 
+export type UnitWithSeries = Prisma.UnitGetPayload<{ include: typeof unitInclude }>;
 export type SongWithUnit = Prisma.SongGetPayload<{ include: typeof songInclude }>;
 
 export async function listUnits() {
   return prisma.unit.findMany({
+    include: unitInclude,
     orderBy: [{ sortOrder: "asc" }, { name: "asc" }]
   });
 }

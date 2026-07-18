@@ -68,3 +68,15 @@ export async function getDeezerTrack(trackId: number) {
   const json = await requestJson(`/track/${trackId}`);
   return DeezerTrackSchema.parse(json);
 }
+
+const DeezerSearchResponseSchema = z.object({
+  data: z.array(DeezerTrackSchema),
+  total: z.number().int().optional(),
+  next: z.string().optional()
+});
+
+export async function searchDeezerTracks(query: string, limit = 10) {
+  const params = new URLSearchParams({ q: query, limit: String(limit) });
+  const json = await requestJson(`/search?${params.toString()}`);
+  return DeezerSearchResponseSchema.parse(json).data;
+}
