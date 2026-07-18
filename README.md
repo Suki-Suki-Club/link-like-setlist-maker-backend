@@ -110,3 +110,10 @@ This project uses Supabase as the Postgres runtime and Prisma as the application
 4. Be careful with `npm test`. The test script runs `prisma migrate reset --force` against `TEST_DATABASE_URL`, so that URL must only point at a disposable test database.
 5. Seed data is managed by Prisma. Keep catalog bootstrap data in `prisma/seed.ts` and `prisma/seed-data/`, and do not introduce a second seed flow through Supabase CLI.
 6. The current backend relies on Supabase primarily as the hosted Postgres provider. Do not assume Auth, Storage, Realtime, or other Supabase features are part of the application contract unless code is added for them.
+
+## Setlist storage and retention
+
+Setlists are stored as a single row per setlist: the ordered song ids live in `Setlist.songIds` (`TEXT[]`), and there is no per-song child table. Two safeguards keep the table from growing without bound:
+
+- **Content-hash dedup**: `Setlist.contentHash` is a SHA-256 of `(title, description, songIds)` with a unique index. Posting an identical setlist returns the existing row (and refreshes its `lastAccessedAt`) instead of inserting a new one. Rows created before the dedup migration have a `NULL` hash and are never deduplicated.
+- **TTL cleanup**: `Setlist.lastAccessedAt` is refreshed on reads and dedup hits at most once per day per setlist. `supabase/snippets/setlist-ttl-cron.sql` schedules a daily `pg_cron` job that deletes setlists not accessed for 180 days. The pg_cron job is per-project state, so run the snippet once against each Supabase project (it is intentionally not a Prisma migration because `pg_cron` is unavailable in test databases). Deleting a setlist invalidates its share URL, so adjust the retention interval there if shared links must live longer.

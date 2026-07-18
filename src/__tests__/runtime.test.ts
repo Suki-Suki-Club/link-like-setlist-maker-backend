@@ -44,6 +44,7 @@ vi.mock("@prisma/client", () => ({
 afterEach(() => {
   prismaMocks.adapterInstances.length = 0;
   prismaMocks.prismaInstances.length = 0;
+  vi.unstubAllEnvs();
   vi.clearAllMocks();
 });
 
@@ -96,6 +97,11 @@ describe("Cloudflare runtime Prisma lifecycle", () => {
 
   it("uses the Hyperdrive connection string when DATABASE_URL is not present in the Worker env", async () => {
     const { createAppConfig } = await import("../runtime.js");
+
+    // createAppConfig falls back to process.env, which the npm-test wrapper
+    // populates with the test database URLs; the Worker env must win here.
+    vi.stubEnv("DATABASE_URL", undefined);
+    vi.stubEnv("DIRECT_URL", undefined);
 
     const config = createAppConfig({
       HYPERDRIVE: {

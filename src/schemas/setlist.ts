@@ -1,10 +1,8 @@
 import { z } from "@hono/zod-openapi";
-import { SongSchema } from "./catalog.js";
 
 export const SetlistItemInputSchema = z
   .object({
-    songId: z.string().min(1).openapi({ example: "dream-believers" }),
-    memo: z.string().trim().max(500).optional().openapi({ example: "Start with full chorus" })
+    songId: z.string().min(1).openapi({ example: "dream-believers" })
   })
   .openapi("SetlistItemInput");
 
@@ -28,12 +26,8 @@ export const SetlistParamsSchema = z.object({
 
 export const SetlistItemSchema = z
   .object({
-    id: z.string(),
-    setlistId: z.string(),
     songId: z.string(),
-    position: z.number().int().positive(),
-    memo: z.string().nullable(),
-    song: SongSchema
+    position: z.number().int().positive()
   })
   .openapi("SetlistItem");
 

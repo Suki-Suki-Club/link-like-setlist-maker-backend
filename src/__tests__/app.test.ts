@@ -6,7 +6,6 @@ import { clearSongMediaMemoryCache } from "../services/songMediaService.js";
 
 async function resetDatabase() {
   await prisma.songMedia.deleteMany();
-  await prisma.setlistItem.deleteMany();
   await prisma.setlist.deleteMany();
   await prisma.song.deleteMany();
   await prisma.unit.deleteMany();
@@ -309,20 +308,20 @@ describe("setlist API", () => {
         title: "Opening block",
         description: "Two song flow",
         items: [
-          { songId: "dream-believers", memo: "Start" },
-          { songId: "holiday-holiday", memo: "Follow" }
+          { songId: "dream-believers" },
+          { songId: "holiday-holiday" }
         ]
       })
     });
 
     expect(createResponse.status).toBe(201);
     const created = (await createResponse.json()) as {
-      setlist: { id: string; title: string; items: Array<{ position: number; songId: string; memo: string | null }> };
+      setlist: { id: string; title: string; items: Array<{ position: number; songId: string }> };
     };
     expect(created.setlist.title).toBe("Opening block");
     expect(created.setlist.items).toEqual([
-      expect.objectContaining({ position: 1, songId: "dream-believers", memo: "Start" }),
-      expect.objectContaining({ position: 2, songId: "holiday-holiday", memo: "Follow" })
+      { position: 1, songId: "dream-believers" },
+      { position: 2, songId: "holiday-holiday" }
     ]);
 
     const getResponse = await app.request(`/api/setlists/${created.setlist.id}`);
@@ -330,6 +329,36 @@ describe("setlist API", () => {
     await expect(getResponse.json()).resolves.toMatchObject({
       setlist: { id: created.setlist.id, title: "Opening block" }
     });
+  });
+
+  it("dedupes setlists with identical content", async () => {
+    const payload = {
+      title: "Encore block",
+      description: JSON.stringify({ breaks: [], encoreAfters: [1] }),
+      items: [{ songId: "dream-believers" }, { songId: "holiday-holiday" }]
+    };
+    const createSetlist = (body: Record<string, unknown>) =>
+      app.request("/api/setlists", {
+        method: "POST",
+        headers: { ...serviceAuthHeaders, "content-type": "application/json" },
+        body: JSON.stringify(body)
+      });
+
+    const firstResponse = await createSetlist(payload);
+    expect(firstResponse.status).toBe(201);
+    const first = (await firstResponse.json()) as { setlist: { id: string } };
+
+    const duplicateResponse = await createSetlist(payload);
+    expect(duplicateResponse.status).toBe(201);
+    const duplicate = (await duplicateResponse.json()) as { setlist: { id: string } };
+    expect(duplicate.setlist.id).toBe(first.setlist.id);
+
+    const differentResponse = await createSetlist({ ...payload, title: "Another title" });
+    expect(differentResponse.status).toBe(201);
+    const different = (await differentResponse.json()) as { setlist: { id: string } };
+    expect(different.setlist.id).not.toBe(first.setlist.id);
+
+    await expect(prisma.setlist.count()).resolves.toBe(2);
   });
 
   it("rejects invalid setlist payloads and unknown song ids", async () => {
