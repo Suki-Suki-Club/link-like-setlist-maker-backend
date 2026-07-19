@@ -12,6 +12,19 @@ export function normalizeTitleKey(title: string): string {
     .replace(/[!！?？。、,.'’"”~〜・:：;；☆★♪]/g, "");
 }
 
+/**
+ * 公式サイトはタイトル末尾に「（『作品名』テーマソング）」のようなタイアップ注記を
+ * 付けることがある。曲名そのものではないので、候補化の前に取り除く。
+ */
+export function cleanScrapedTitle(title: string): string {
+  return title
+    .replace(
+      /[（(][^（）()]*(テーマソング|テーマ曲|主題歌|主題曲|挿入歌|イメージソング)[^（）()]*[）)]\s*$/u,
+      ""
+    )
+    .trim();
+}
+
 const DEFAULT_EXCLUDE_PATTERNS = [
   "off\\s*vocal",
   "オフヴォーカル",
@@ -73,7 +86,7 @@ export function buildCatalogCandidates(
 
   for (const release of sorted) {
     for (const track of release.tracks) {
-      const title = track.title.trim();
+      const title = cleanScrapedTitle(track.title.trim());
 
       if (!title || isExcluded(title)) {
         continue;

@@ -88,5 +88,11 @@
     "name": "蓮ノ三連華",
     "seriesId": "hasunosora",
     "sortOrder": 15
+  },
+  {
+    "id": "aiscream",
+    "name": "AiScReam",
+    "seriesId": "hasunosora",
+    "sortOrder": 16
   }
 ]
