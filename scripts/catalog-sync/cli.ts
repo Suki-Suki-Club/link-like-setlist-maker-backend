@@ -16,6 +16,7 @@ import { join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { createFetcher } from "./fetcher.js";
 import { hasunosoraScraper } from "./scrapers/hasunosora.js";
+import { nijigasakiScraper } from "./scrapers/nijigasaki.js";
 import type { SeriesScraper } from "./scrapers/types.js";
 import { buildCatalogCandidates, createTrackExcluder, type CatalogCandidate } from "./normalize.js";
 import { diffCatalog, type SongSeedEntry } from "./diff.js";
@@ -26,7 +27,8 @@ import { appendNewSongs, buildReviewReport, serializeSongs, type NewSongEntry } 
 import { pushChangesAndOpenPr } from "./github.js";
 
 const SCRAPERS: Record<string, SeriesScraper> = {
-  [hasunosoraScraper.seriesId]: hasunosoraScraper
+  [hasunosoraScraper.seriesId]: hasunosoraScraper,
+  [nijigasakiScraper.seriesId]: nijigasakiScraper
 };
 
 type SyncConfig = {
@@ -36,6 +38,8 @@ type SyncConfig = {
   excludeReleasePatterns: string[];
   deezer: MatcherThresholds & { searchIntervalMs: number };
   seriesArtistAliases: Record<string, string[]>;
+  /** unitId → Deezer 上のアーティスト名義(英語表記など) */
+  unitArtistAliases?: Record<string, string[]>;
 };
 
 const SEED_DATA_DIR = join(process.cwd(), "prisma", "seed-data");
@@ -146,7 +150,10 @@ export async function runCatalogSync(argv: string[]) {
       const match = await matchSongToDeezer(
         {
           title: candidate.title,
-          unitNames: unitName ? [unitName] : [],
+          unitNames: [
+            ...(unitName ? [unitName] : []),
+            ...(config.unitArtistAliases?.[unitId] ?? [])
+          ],
           seriesArtists: config.seriesArtistAliases[seriesId] ?? []
         },
         {

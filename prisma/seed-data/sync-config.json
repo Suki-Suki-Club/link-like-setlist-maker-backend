@@ -1,7 +1,41 @@
 {
-  "enabledSeries": ["hasunosora"],
-  "excludeTrackPatterns": ["\\([^)]*ver\\.?\\)$"],
-  "excludeReleasePatterns": ["オリジナルサウンドトラック", "original soundtrack", "tribute album"],
+  "enabledSeries": [
+    "hasunosora",
+    "nijigasaki"
+  ],
+  "excludeTrackPatterns": [
+    "\\([^)]*ver\\.?\\)$",
+    "ラジオドラマ",
+    "ラジオCD",
+    "ミニドラマ",
+    "スペシャルドラマ",
+    "^「TOKIMEKI\\ Runners」CGアニメーションPV$",
+    "^「ラブライブ!スクールアイドルフェスティバルALL\\ STARS」オープニングムービー$",
+    "^歩夢inワンダーランド\\?\\?\\?$",
+    "^彼方と璃奈の体育祭大作戦$",
+    "^A・ZU・NAランドへようこそ!$",
+    "^DiverDivaにお任せ!!$",
+    "^バレンタインパーティー$",
+    "^エマと愛のお花見パーティープロデュース!$",
+    "^かすみのトキメキ祝祭カーニバル!$",
+    "^グラウンドの支配者・しずく!$",
+    "^名探偵カリン\\&アイ!$",
+    "^A・ZU・NA動物園は大忙し!$",
+    "^団結!QU4RTZのドリームパーティー$",
+    "^The\\ glorious\\ fairies$",
+    "^果林と栞子のお掃除狂想曲!$",
+    "^トキメキキャニオンに吹く風・R3BIRTH$",
+    "^怪盗を捕まえろ!\\?$",
+    "^A・ZU・NAランドは止まらない!$",
+    "^Feeling\\ the\\ sky$",
+    "^時を翔けるサンタ、ランジュ!$",
+    "^あまくてたのしい♡AiScReamラジオ!$"
+  ],
+  "excludeReleasePatterns": [
+    "オリジナルサウンドトラック",
+    "original soundtrack",
+    "tribute album"
+  ],
   "deezer": {
     "autoApplyScore": 0.9,
     "autoApplyMargin": 0.15,
@@ -9,10 +43,82 @@
     "searchIntervalMs": 1100
   },
   "seriesArtistAliases": {
-    "muse": ["μ's"],
-    "aqours": ["Aqours"],
-    "nijigasaki": ["虹ヶ咲学園スクールアイドル同好会", "Nijigasaki High School Idol Club"],
-    "liella": ["Liella!"],
-    "hasunosora": ["蓮ノ空女学院スクールアイドルクラブ", "Hasunosora Jogakuin School Idol Club"]
+    "muse": [
+      "μ's"
+    ],
+    "aqours": [
+      "Aqours"
+    ],
+    "nijigasaki": [
+      "虹ヶ咲学園スクールアイドル同好会",
+      "Nijigasaki High School Idol Club"
+    ],
+    "liella": [
+      "Liella!"
+    ],
+    "hasunosora": [
+      "蓮ノ空女学院スクールアイドルクラブ",
+      "Hasunosora Jogakuin School Idol Club"
+    ]
+  },
+  "unitArtistAliases": {
+    "nijigasaki": [
+      "Nijigasaki High School Idol Club"
+    ],
+    "azuna": [
+      "A・ZU・NA",
+      "AZUNA"
+    ],
+    "diverdiva": [
+      "DiverDiva"
+    ],
+    "qu4rtz": [
+      "QU4RTZ"
+    ],
+    "r3birth": [
+      "R3BIRTH"
+    ],
+    "takasaki-yu": [
+      "Yu Takasaki"
+    ],
+    "uehara-ayumu": [
+      "Ayumu Uehara"
+    ],
+    "nakasu-kasumi": [
+      "Kasumi Nakasu"
+    ],
+    "osaka-shizuku": [
+      "Shizuku Osaka"
+    ],
+    "asaka-karin": [
+      "Karin Asaka"
+    ],
+    "miyashita-ai": [
+      "Ai Miyashita"
+    ],
+    "konoe-kanata": [
+      "Kanata Konoe"
+    ],
+    "emma-verde": [
+      "Emma Verde"
+    ],
+    "tennoji-rina": [
+      "Rina Tennoji"
+    ],
+    "yuki-setsuna": [
+      "Setsuna Yuki"
+    ],
+    "mifune-shioriko": [
+      "Shioriko Mifune"
+    ],
+    "mia-taylor": [
+      "Mia Taylor"
+    ],
+    "zhong-lanzhu": [
+      "Lanzhu Zhong"
+    ],
+    "hasunosora": [
+      "Hasunosora Jogakuin School Idol Club"
+    ]
   }
 }
