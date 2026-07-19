@@ -1374,5 +1374,14 @@
     "sortOrder": 192,
     "releaseDate": "2026-06-03",
     "deezerTrackId": 4058160811
+  },
+  {
+    "id": "issh-niyumegasakuy-ni",
+    "title": "一生に夢が咲くように",
+    "titleJa": "一生に夢が咲くように",
+    "unitId": "hasunosora",
+    "sortOrder": 193,
+    "releaseDate": "2025-10-06",
+    "deezerTrackId": null
   }
 ]
