@@ -73,7 +73,10 @@ function artistScore(deezerArtist: string, unitNames: string[], seriesArtists: s
   const artistKey = normalizeCreditKey(deezerArtist);
 
   for (const unitName of unitNames) {
-    if (artistKey === normalizeCreditKey(unitName)) {
+    const unitKey = normalizeCreditKey(unitName);
+
+    // Deezer は「Ayumu Uehara (CV: Aguri Onishi)」のように CV を後置するため前方一致も完全一致扱い
+    if (artistKey === unitKey || (unitKey.length >= 4 && artistKey.startsWith(unitKey))) {
       return 1;
     }
   }
@@ -127,10 +130,12 @@ export async function matchSongToDeezer(
   const intervalMs = options.intervalMs ?? 1100;
 
   const primaryArtist = input.unitNames[0];
+  // unitNames[1] 以降は Deezer 上の英語名義エイリアス。日本語名で見つからない曲を拾う
+  const aliasArtist = input.unitNames[1];
   const queries = [
     primaryArtist ? `track:"${input.title}" artist:"${primaryArtist}"` : null,
-    primaryArtist ? `${input.title} ${primaryArtist}` : null,
-    input.title
+    input.title,
+    aliasArtist ? `${input.title} ${aliasArtist}` : null
   ].filter((query): query is string => query !== null);
 
   const seenTrackIds = new Set<number>();

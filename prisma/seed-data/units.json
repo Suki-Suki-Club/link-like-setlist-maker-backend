@@ -94,5 +94,113 @@
     "name": "AiScReam",
     "seriesId": "hasunosora",
     "sortOrder": 16
+  },
+  {
+    "id": "nijigasaki",
+    "name": "虹ヶ咲学園スクールアイドル同好会",
+    "seriesId": "nijigasaki",
+    "sortOrder": 17
+  },
+  {
+    "id": "azuna",
+    "name": "A・ZU・NA",
+    "seriesId": "nijigasaki",
+    "sortOrder": 18
+  },
+  {
+    "id": "diverdiva",
+    "name": "DiverDiva",
+    "seriesId": "nijigasaki",
+    "sortOrder": 19
+  },
+  {
+    "id": "qu4rtz",
+    "name": "QU4RTZ",
+    "seriesId": "nijigasaki",
+    "sortOrder": 20
+  },
+  {
+    "id": "r3birth",
+    "name": "R3BIRTH",
+    "seriesId": "nijigasaki",
+    "sortOrder": 21
+  },
+  {
+    "id": "takasaki-yu",
+    "name": "高咲侑",
+    "seriesId": "nijigasaki",
+    "sortOrder": 22
+  },
+  {
+    "id": "uehara-ayumu",
+    "name": "上原歩夢",
+    "seriesId": "nijigasaki",
+    "sortOrder": 23
+  },
+  {
+    "id": "nakasu-kasumi",
+    "name": "中須かすみ",
+    "seriesId": "nijigasaki",
+    "sortOrder": 24
+  },
+  {
+    "id": "osaka-shizuku",
+    "name": "桜坂しずく",
+    "seriesId": "nijigasaki",
+    "sortOrder": 25
+  },
+  {
+    "id": "asaka-karin",
+    "name": "朝香果林",
+    "seriesId": "nijigasaki",
+    "sortOrder": 26
+  },
+  {
+    "id": "miyashita-ai",
+    "name": "宮下 愛",
+    "seriesId": "nijigasaki",
+    "sortOrder": 27
+  },
+  {
+    "id": "konoe-kanata",
+    "name": "近江彼方",
+    "seriesId": "nijigasaki",
+    "sortOrder": 28
+  },
+  {
+    "id": "emma-verde",
+    "name": "エマ・ヴェルデ",
+    "seriesId": "nijigasaki",
+    "sortOrder": 29
+  },
+  {
+    "id": "tennoji-rina",
+    "name": "天王寺璃奈",
+    "seriesId": "nijigasaki",
+    "sortOrder": 30
+  },
+  {
+    "id": "mifune-shioriko",
+    "name": "三船栞子",
+    "seriesId": "nijigasaki",
+    "sortOrder": 31
+  },
+  {
+    "id": "mia-taylor",
+    "name": "ミア・テイラー",
+    "seriesId": "nijigasaki",
+    "sortOrder": 32
+  },
+  {
+    "id": "zhong-lanzhu",
+    "name": "鐘嵐珠",
+    "seriesId": "nijigasaki",
+    "sortOrder": 33
+  },
+  {
+    "id": "yuki-setsuna",
+    "name": "優木せつ菜",
+    "seriesId": "nijigasaki",
+    "sortOrder": 34
   }
 ]
