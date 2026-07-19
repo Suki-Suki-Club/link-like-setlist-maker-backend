@@ -1,7 +1,8 @@
 {
   "enabledSeries": [
     "hasunosora",
-    "nijigasaki"
+    "nijigasaki",
+    "liella"
   ],
   "excludeTrackPatterns": [
     "\\([^)]*ver\\.?\\)$",
@@ -119,6 +120,54 @@
     ],
     "hasunosora": [
       "Hasunosora Jogakuin School Idol Club"
+    ],
+    "liella": [
+      "Liella!"
+    ],
+    "kaleidoscore": [
+      "KALEIDOSCORE"
+    ],
+    "catchu": [
+      "CatChu!"
+    ],
+    "5yncri5e": [
+      "5yncri5e!"
+    ],
+    "shibuya-kanon": [
+      "Kanon Shibuya"
+    ],
+    "tang-keke": [
+      "Keke Tang"
+    ],
+    "arashi-chisato": [
+      "Chisato Arashi"
+    ],
+    "heanna-sumire": [
+      "Sumire Heanna"
+    ],
+    "hazuki-ren": [
+      "Ren Hazuki"
+    ],
+    "sakurakoji-kinako": [
+      "Kinako Sakurakoji"
+    ],
+    "yoneme-mei": [
+      "Mei Yoneme"
+    ],
+    "wakana-shiki": [
+      "Shiki Wakana"
+    ],
+    "onitsuka-natsumi": [
+      "Natsumi Onitsuka"
+    ],
+    "wien-margarete": [
+      "Wien Margarete"
+    ],
+    "onitsuka-tomari": [
+      "Tomari Onitsuka"
+    ],
+    "sunny-passion": [
+      "Sunny Passion"
     ]
   }
 }
