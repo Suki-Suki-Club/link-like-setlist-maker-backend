@@ -1297,7 +1297,7 @@
   {
     "id": "hitoyo-ni-yume-ga-saku-you-ni",
     "title": "Hitoyo ni Yume ga Saku You ni",
-    "titleJa": "一夜に夢が咲くように",
+    "titleJa": "一生に夢が咲くように",
     "unitId": "hasunosora",
     "sortOrder": 184,
     "releaseDate": "2026-04-15",
@@ -1374,5 +1374,14 @@
     "sortOrder": 192,
     "releaseDate": "2026-06-03",
     "deezerTrackId": 4058160811
+  },
+  {
+    "id": "next-card",
+    "title": "NEXT CARD",
+    "titleJa": "NEXT CARD",
+    "unitId": "aiscream",
+    "sortOrder": 193,
+    "releaseDate": "2026-05-23",
+    "deezerTrackId": 3967298941
   }
 ]

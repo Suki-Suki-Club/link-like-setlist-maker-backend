@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   buildCatalogCandidates,
+  cleanScrapedTitle,
   createTrackExcluder,
   normalizeTitleKey,
   parseDotDate,
@@ -17,6 +18,20 @@ describe("normalizeTitleKey", () => {
 
   it("keeps distinct titles distinct", () => {
     expect(normalizeTitleKey("水彩世界")).not.toBe(normalizeTitleKey("素敵な世界"));
+  });
+});
+
+describe("cleanScrapedTitle", () => {
+  it("strips trailing tie-in annotations", () => {
+    expect(
+      cleanScrapedTitle("NEXT CARD（『ラブライブ！シリーズ　オフィシャルカードゲーム』テーマソング）")
+    ).toBe("NEXT CARD");
+    expect(cleanScrapedTitle("Dream Believers（TVアニメ主題歌）")).toBe("Dream Believers");
+  });
+
+  it("keeps normal parenthetical titles untouched", () => {
+    expect(cleanScrapedTitle("Holiday∞Holiday")).toBe("Holiday∞Holiday");
+    expect(cleanScrapedTitle("以心☆電信（104期Ver.）")).toBe("以心☆電信（104期Ver.）");
   });
 });
 
