@@ -2915,15 +2915,6 @@
     "deezerTrackId": 3943873381
   },
   {
-    "id": "mirakuru-stay-tune-eb9a",
-    "title": "ミラクル STAY TUNE！",
-    "titleJa": "ミラクル STAY TUNE！",
-    "unitId": "nijigasaki",
-    "sortOrder": 385,
-    "releaseDate": "2021-11-24",
-    "deezerTrackId": 3943873371
-  },
-  {
     "id": "hot-passion",
     "title": "HOT PASSION!!",
     "titleJa": "HOT PASSION!!",
@@ -3662,24 +3653,6 @@
     "deezerTrackId": 3135123301
   },
   {
-    "id": "ice-limit-f7eb",
-    "title": "ICE LIMIT",
-    "titleJa": "ICE LIMIT",
-    "unitId": "aiscream",
-    "sortOrder": 468,
-    "releaseDate": "2025-01-22",
-    "deezerTrackId": 3144729701
-  },
-  {
-    "id": "ai-sukuri-mu-fcba",
-    "title": "愛♡スクリ～ム！",
-    "titleJa": "愛♡スクリ～ム！",
-    "unitId": "aiscream",
-    "sortOrder": 469,
-    "releaseDate": "2025-01-22",
-    "deezerTrackId": 3144729691
-  },
-  {
     "id": "dolce",
     "title": "dolce",
     "titleJa": "dolce",
@@ -3705,5 +3678,86 @@
     "sortOrder": 472,
     "releaseDate": "2026-07-08",
     "deezerTrackId": 4069617441
+  },
+  {
+    "id": "tiny-stars",
+    "title": "Tiny Stars",
+    "titleJa": "Tiny Stars",
+    "unitId": "kanon-keke",
+    "sortOrder": 473,
+    "releaseDate": "2021-08-25",
+    "deezerTrackId": null
+  },
+  {
+    "id": "tokonatsu-sanshain",
+    "title": "常夏☆サンシャイン",
+    "titleJa": "常夏☆サンシャイン",
+    "unitId": "kanon-keke-chisato-sumire",
+    "sortOrder": 474,
+    "releaseDate": "2021-09-29",
+    "deezerTrackId": null
+  },
+  {
+    "id": "bubble-rise",
+    "title": "Bubble Rise",
+    "titleJa": "Bubble Rise",
+    "unitId": "kanon-margarete-tomari",
+    "sortOrder": 475,
+    "releaseDate": "2024-11-13",
+    "deezerTrackId": null
+  },
+  {
+    "id": "11th-moon",
+    "title": "11th moon",
+    "titleJa": "11th moon",
+    "unitId": "margarete-tomari",
+    "sortOrder": 476,
+    "releaseDate": "2025-01-29",
+    "deezerTrackId": null
+  },
+  {
+    "id": "summer-escape",
+    "title": "Summer Escape!!",
+    "titleJa": "Summer Escape!!",
+    "unitId": "kinako-mei-shiki-natsumi",
+    "sortOrder": 477,
+    "releaseDate": "2025-01-29",
+    "deezerTrackId": null
+  },
+  {
+    "id": "hitohiradake",
+    "title": "ひとひらだけ",
+    "titleJa": "ひとひらだけ",
+    "unitId": "liella-first-generation",
+    "sortOrder": 478,
+    "releaseDate": "2025-01-29",
+    "deezerTrackId": null
+  },
+  {
+    "id": "winds-of-yell",
+    "title": "Winds of YELL",
+    "titleJa": "Winds of YELL",
+    "unitId": "chisato-sumire-mei-margarete",
+    "sortOrder": 479,
+    "releaseDate": "2026-07-08",
+    "deezerTrackId": null
+  },
+  {
+    "id": "tokubetsujanaimah",
+    "title": "トクベツじゃない魔法",
+    "titleJa": "トクベツじゃない魔法",
+    "unitId": "kanon-keke-kinako-natsumi",
+    "sortOrder": 480,
+    "releaseDate": "2026-07-08",
+    "deezerTrackId": null
+  },
+  {
+    "id": "mebae",
+    "title": "芽生え",
+    "titleJa": "芽生え",
+    "unitId": "ren-shiki-tomari",
+    "sortOrder": 481,
+    "releaseDate": "2026-07-08",
+    "deezerTrackId": null
   }
 ]

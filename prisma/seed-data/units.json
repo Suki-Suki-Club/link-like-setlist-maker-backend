@@ -298,5 +298,59 @@
     "name": "Sunny Passion",
     "seriesId": "liella",
     "sortOrder": 50
+  },
+  {
+    "id": "kanon-keke",
+    "name": "澁谷かのん&唐 可可",
+    "seriesId": "liella",
+    "sortOrder": 51
+  },
+  {
+    "id": "kanon-keke-chisato-sumire",
+    "name": "澁谷かのん&唐 可可&嵐 千砂都&平安名すみれ",
+    "seriesId": "liella",
+    "sortOrder": 52
+  },
+  {
+    "id": "kanon-margarete-tomari",
+    "name": "澁谷かのん&ウィーン・マルガレーテ&鬼塚冬毬",
+    "seriesId": "liella",
+    "sortOrder": 53
+  },
+  {
+    "id": "kinako-mei-shiki-natsumi",
+    "name": "桜小路きな子&米女メイ&若菜四季&鬼塚夏美",
+    "seriesId": "liella",
+    "sortOrder": 54
+  },
+  {
+    "id": "margarete-tomari",
+    "name": "ウィーン・マルガレーテ&鬼塚冬毬",
+    "seriesId": "liella",
+    "sortOrder": 55
+  },
+  {
+    "id": "liella-first-generation",
+    "name": "澁谷かのん&唐 可可&嵐 千砂都&平安名すみれ&葉月 恋",
+    "seriesId": "liella",
+    "sortOrder": 56
+  },
+  {
+    "id": "kanon-keke-kinako-natsumi",
+    "name": "澁谷かのん&唐 可可&桜小路きな子&鬼塚夏美",
+    "seriesId": "liella",
+    "sortOrder": 57
+  },
+  {
+    "id": "chisato-sumire-mei-margarete",
+    "name": "嵐 千砂都&平安名すみれ&米女メイ&ウィーン・マルガレーテ",
+    "seriesId": "liella",
+    "sortOrder": 58
+  },
+  {
+    "id": "ren-shiki-tomari",
+    "name": "葉月 恋&若菜四季&鬼塚冬毬",
+    "seriesId": "liella",
+    "sortOrder": 59
   }
 ]

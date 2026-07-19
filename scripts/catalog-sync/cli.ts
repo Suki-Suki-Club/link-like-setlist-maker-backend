@@ -126,7 +126,10 @@ export async function runCatalogSync(argv: string[]) {
       const unit = units.find((entry) => entry.id === song.unitId);
       return unit?.seriesId === seriesId;
     });
-    const diff = diffCatalog(candidates, seriesSongs);
+    // 新曲判定は全シリーズの既存曲と照合する(別シリーズのCDに同じ曲が載ると重複するため)。
+    // missingFromSite の集計だけは対象シリーズ内に限定する。
+    const diff = diffCatalog(candidates, updatedSongs);
+    diff.missingFromSite = diffCatalog(candidates, seriesSongs).missingFromSite;
 
     const resolved: Array<{ candidate: CatalogCandidate; unitId: string }> = [];
     const unresolvedUnits: CatalogCandidate[] = [];
