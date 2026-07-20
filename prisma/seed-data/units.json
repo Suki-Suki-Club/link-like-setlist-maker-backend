@@ -202,5 +202,155 @@
     "name": "優木せつ菜",
     "seriesId": "nijigasaki",
     "sortOrder": 34
+  },
+  {
+    "id": "liella",
+    "name": "Liella!",
+    "seriesId": "liella",
+    "sortOrder": 35
+  },
+  {
+    "id": "kaleidoscore",
+    "name": "KALEIDOSCORE",
+    "seriesId": "liella",
+    "sortOrder": 36
+  },
+  {
+    "id": "catchu",
+    "name": "CatChu!",
+    "seriesId": "liella",
+    "sortOrder": 37
+  },
+  {
+    "id": "5yncri5e",
+    "name": "5yncri5e!",
+    "seriesId": "liella",
+    "sortOrder": 38
+  },
+  {
+    "id": "shibuya-kanon",
+    "name": "澁谷かのん",
+    "seriesId": "liella",
+    "sortOrder": 39
+  },
+  {
+    "id": "tang-keke",
+    "name": "唐 可可",
+    "seriesId": "liella",
+    "sortOrder": 40
+  },
+  {
+    "id": "arashi-chisato",
+    "name": "嵐 千砂都",
+    "seriesId": "liella",
+    "sortOrder": 41
+  },
+  {
+    "id": "heanna-sumire",
+    "name": "平安名すみれ",
+    "seriesId": "liella",
+    "sortOrder": 42
+  },
+  {
+    "id": "hazuki-ren",
+    "name": "葉月恋",
+    "seriesId": "liella",
+    "sortOrder": 43
+  },
+  {
+    "id": "sakurakoji-kinako",
+    "name": "桜小路きな子",
+    "seriesId": "liella",
+    "sortOrder": 44
+  },
+  {
+    "id": "yoneme-mei",
+    "name": "米女メイ",
+    "seriesId": "liella",
+    "sortOrder": 45
+  },
+  {
+    "id": "wakana-shiki",
+    "name": "若菜四季",
+    "seriesId": "liella",
+    "sortOrder": 46
+  },
+  {
+    "id": "onitsuka-natsumi",
+    "name": "鬼塚夏美",
+    "seriesId": "liella",
+    "sortOrder": 47
+  },
+  {
+    "id": "wien-margarete",
+    "name": "ウィーン・マルガレーテ",
+    "seriesId": "liella",
+    "sortOrder": 48
+  },
+  {
+    "id": "onitsuka-tomari",
+    "name": "鬼塚冬毬",
+    "seriesId": "liella",
+    "sortOrder": 49
+  },
+  {
+    "id": "sunny-passion",
+    "name": "Sunny Passion",
+    "seriesId": "liella",
+    "sortOrder": 50
+  },
+  {
+    "id": "kanon-keke",
+    "name": "澁谷かのん&唐 可可",
+    "seriesId": "liella",
+    "sortOrder": 51
+  },
+  {
+    "id": "kanon-keke-chisato-sumire",
+    "name": "澁谷かのん&唐 可可&嵐 千砂都&平安名すみれ",
+    "seriesId": "liella",
+    "sortOrder": 52
+  },
+  {
+    "id": "kanon-margarete-tomari",
+    "name": "澁谷かのん&ウィーン・マルガレーテ&鬼塚冬毬",
+    "seriesId": "liella",
+    "sortOrder": 53
+  },
+  {
+    "id": "kinako-mei-shiki-natsumi",
+    "name": "桜小路きな子&米女メイ&若菜四季&鬼塚夏美",
+    "seriesId": "liella",
+    "sortOrder": 54
+  },
+  {
+    "id": "margarete-tomari",
+    "name": "ウィーン・マルガレーテ&鬼塚冬毬",
+    "seriesId": "liella",
+    "sortOrder": 55
+  },
+  {
+    "id": "liella-first-generation",
+    "name": "澁谷かのん&唐 可可&嵐 千砂都&平安名すみれ&葉月 恋",
+    "seriesId": "liella",
+    "sortOrder": 56
+  },
+  {
+    "id": "kanon-keke-kinako-natsumi",
+    "name": "澁谷かのん&唐 可可&桜小路きな子&鬼塚夏美",
+    "seriesId": "liella",
+    "sortOrder": 57
+  },
+  {
+    "id": "chisato-sumire-mei-margarete",
+    "name": "嵐 千砂都&平安名すみれ&米女メイ&ウィーン・マルガレーテ",
+    "seriesId": "liella",
+    "sortOrder": 58
+  },
+  {
+    "id": "ren-shiki-tomari",
+    "name": "葉月 恋&若菜四季&鬼塚冬毬",
+    "seriesId": "liella",
+    "sortOrder": 59
   }
 ]

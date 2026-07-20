@@ -1,7 +1,8 @@
 {
   "enabledSeries": [
     "hasunosora",
-    "nijigasaki"
+    "nijigasaki",
+    "liella"
   ],
   "excludeTrackPatterns": [
     "\\([^)]*ver\\.?\\)$",
@@ -29,7 +30,15 @@
     "^A・ZU・NAランドは止まらない!$",
     "^Feeling\\ the\\ sky$",
     "^時を翔けるサンタ、ランジュ!$",
-    "^あまくてたのしい♡AiScReamラジオ!$"
+    "^あまくてたのしい♡AiScReamラジオ!$",
+    "^うぃーっす!\\ \\~嵐\\ 千砂都\\~$",
+    "^お待たせしました!\\ \\~平安名すみれ\\~$",
+    "^こんにちは!\\ \\~澁谷かのん\\~$",
+    "^どうも!\\ \\~唐\\ 可可\\~$",
+    "^はじめまして。\\ \\~葉月\\ 恋\\~$",
+    "^みんなでお出かけ!\\ \\~計画編\\~$",
+    "^みんなでお出かけ!\\ \\~集合編\\~$",
+    "^dolce$"
   ],
   "excludeReleasePatterns": [
     "オリジナルサウンドトラック",
@@ -119,6 +128,54 @@
     ],
     "hasunosora": [
       "Hasunosora Jogakuin School Idol Club"
+    ],
+    "liella": [
+      "Liella!"
+    ],
+    "kaleidoscore": [
+      "KALEIDOSCORE"
+    ],
+    "catchu": [
+      "CatChu!"
+    ],
+    "5yncri5e": [
+      "5yncri5e!"
+    ],
+    "shibuya-kanon": [
+      "Kanon Shibuya"
+    ],
+    "tang-keke": [
+      "Keke Tang"
+    ],
+    "arashi-chisato": [
+      "Chisato Arashi"
+    ],
+    "heanna-sumire": [
+      "Sumire Heanna"
+    ],
+    "hazuki-ren": [
+      "Ren Hazuki"
+    ],
+    "sakurakoji-kinako": [
+      "Kinako Sakurakoji"
+    ],
+    "yoneme-mei": [
+      "Mei Yoneme"
+    ],
+    "wakana-shiki": [
+      "Shiki Wakana"
+    ],
+    "onitsuka-natsumi": [
+      "Natsumi Onitsuka"
+    ],
+    "wien-margarete": [
+      "Wien Margarete"
+    ],
+    "onitsuka-tomari": [
+      "Tomari Onitsuka"
+    ],
+    "sunny-passion": [
+      "Sunny Passion"
     ]
   }
 }

@@ -17,6 +17,7 @@ import { pathToFileURL } from "node:url";
 import { createFetcher } from "./fetcher.js";
 import { hasunosoraScraper } from "./scrapers/hasunosora.js";
 import { nijigasakiScraper } from "./scrapers/nijigasaki.js";
+import { yuigaokaScraper } from "./scrapers/yuigaoka.js";
 import type { SeriesScraper } from "./scrapers/types.js";
 import { buildCatalogCandidates, createTrackExcluder, type CatalogCandidate } from "./normalize.js";
 import { diffCatalog, type SongSeedEntry } from "./diff.js";
@@ -28,7 +29,8 @@ import { pushChangesAndOpenPr } from "./github.js";
 
 const SCRAPERS: Record<string, SeriesScraper> = {
   [hasunosoraScraper.seriesId]: hasunosoraScraper,
-  [nijigasakiScraper.seriesId]: nijigasakiScraper
+  [nijigasakiScraper.seriesId]: nijigasakiScraper,
+  [yuigaokaScraper.seriesId]: yuigaokaScraper
 };
 
 type SyncConfig = {
@@ -124,7 +126,10 @@ export async function runCatalogSync(argv: string[]) {
       const unit = units.find((entry) => entry.id === song.unitId);
       return unit?.seriesId === seriesId;
     });
-    const diff = diffCatalog(candidates, seriesSongs);
+    // 新曲判定は全シリーズの既存曲と照合する(別シリーズのCDに同じ曲が載ると重複するため)。
+    // missingFromSite の集計だけは対象シリーズ内に限定する。
+    const diff = diffCatalog(candidates, updatedSongs);
+    diff.missingFromSite = diffCatalog(candidates, seriesSongs).missingFromSite;
 
     const resolved: Array<{ candidate: CatalogCandidate; unitId: string }> = [];
     const unresolvedUnits: CatalogCandidate[] = [];
