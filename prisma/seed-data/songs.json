@@ -3686,7 +3686,7 @@
     "unitId": "kanon-keke",
     "sortOrder": 473,
     "releaseDate": "2021-08-25",
-    "deezerTrackId": null
+    "deezerTrackId": 3943916031
   },
   {
     "id": "tokonatsu-sanshain",
@@ -3695,7 +3695,7 @@
     "unitId": "kanon-keke-chisato-sumire",
     "sortOrder": 474,
     "releaseDate": "2021-09-29",
-    "deezerTrackId": null
+    "deezerTrackId": 3943916091
   },
   {
     "id": "bubble-rise",
@@ -3704,7 +3704,7 @@
     "unitId": "kanon-margarete-tomari",
     "sortOrder": 475,
     "releaseDate": "2024-11-13",
-    "deezerTrackId": null
+    "deezerTrackId": 2998422961
   },
   {
     "id": "11th-moon",
@@ -3713,7 +3713,7 @@
     "unitId": "margarete-tomari",
     "sortOrder": 476,
     "releaseDate": "2025-01-29",
-    "deezerTrackId": null
+    "deezerTrackId": 3156857481
   },
   {
     "id": "summer-escape",
@@ -3722,7 +3722,7 @@
     "unitId": "kinako-mei-shiki-natsumi",
     "sortOrder": 477,
     "releaseDate": "2025-01-29",
-    "deezerTrackId": null
+    "deezerTrackId": 3156857471
   },
   {
     "id": "hitohiradake",
@@ -3731,7 +3731,7 @@
     "unitId": "liella-first-generation",
     "sortOrder": 478,
     "releaseDate": "2025-01-29",
-    "deezerTrackId": null
+    "deezerTrackId": 3156857491
   },
   {
     "id": "winds-of-yell",
@@ -3740,7 +3740,7 @@
     "unitId": "chisato-sumire-mei-margarete",
     "sortOrder": 479,
     "releaseDate": "2026-07-08",
-    "deezerTrackId": null
+    "deezerTrackId": 4069617461
   },
   {
     "id": "tokubetsujanaimah",
@@ -3749,7 +3749,7 @@
     "unitId": "kanon-keke-kinako-natsumi",
     "sortOrder": 480,
     "releaseDate": "2026-07-08",
-    "deezerTrackId": null
+    "deezerTrackId": 4069617451
   },
   {
     "id": "mebae",
@@ -3758,6 +3758,6 @@
     "unitId": "ren-shiki-tomari",
     "sortOrder": 481,
     "releaseDate": "2026-07-08",
-    "deezerTrackId": null
+    "deezerTrackId": 4069617471
   }
 ]
