@@ -18,6 +18,7 @@ import { createFetcher } from "./fetcher.js";
 import { hasunosoraScraper } from "./scrapers/hasunosora.js";
 import { nijigasakiScraper } from "./scrapers/nijigasaki.js";
 import { yuigaokaScraper } from "./scrapers/yuigaoka.js";
+import { uranohoshiScraper } from "./scrapers/uranohoshi.js";
 import type { SeriesScraper } from "./scrapers/types.js";
 import { buildCatalogCandidates, createTrackExcluder, type CatalogCandidate } from "./normalize.js";
 import { diffCatalog, type SongSeedEntry } from "./diff.js";
@@ -30,7 +31,8 @@ import { pushChangesAndOpenPr } from "./github.js";
 const SCRAPERS: Record<string, SeriesScraper> = {
   [hasunosoraScraper.seriesId]: hasunosoraScraper,
   [nijigasakiScraper.seriesId]: nijigasakiScraper,
-  [yuigaokaScraper.seriesId]: yuigaokaScraper
+  [yuigaokaScraper.seriesId]: yuigaokaScraper,
+  [uranohoshiScraper.seriesId]: uranohoshiScraper
 };
 
 type SyncConfig = {

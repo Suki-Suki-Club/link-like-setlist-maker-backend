@@ -2,7 +2,8 @@
   "enabledSeries": [
     "hasunosora",
     "nijigasaki",
-    "liella"
+    "liella",
+    "aqours"
   ],
   "excludeTrackPatterns": [
     "\\([^)]*ver\\.?\\)$",
@@ -38,7 +39,8 @@
     "^はじめまして。\\ \\~葉月\\ 恋\\~$",
     "^みんなでお出かけ!\\ \\~計画編\\~$",
     "^みんなでお出かけ!\\ \\~集合編\\~$",
-    "^dolce$"
+    "^dolce$",
+    "^[^(（]+[（(]cv[.．]"
   ],
   "excludeReleasePatterns": [
     "オリジナルサウンドトラック",
@@ -176,6 +178,54 @@
     ],
     "sunny-passion": [
       "Sunny Passion"
+    ],
+    "aqours": [
+      "Aqours"
+    ],
+    "cyaron": [
+      "CYaRon!"
+    ],
+    "azalea": [
+      "AZALEA"
+    ],
+    "guilty-kiss": [
+      "Guilty Kiss"
+    ],
+    "saint-snow": [
+      "Saint Snow"
+    ],
+    "saint-aqours-snow": [
+      "Saint Aqours Snow"
+    ],
+    "takami-chika": [
+      "Chika Takami"
+    ],
+    "sakurauchi-riko": [
+      "Riko Sakurauchi"
+    ],
+    "matsuura-kanan": [
+      "Kanan Matsuura"
+    ],
+    "watanabe-you": [
+      "You Watanabe"
+    ],
+    "tsushima-yoshiko": [
+      "Yoshiko Tsushima"
+    ],
+    "kunikida-hanamaru": [
+      "Hanamaru Kunikida"
+    ],
+    "kurosawa-ruby": [
+      "Ruby Kurosawa"
+    ],
+    "kurosawa-dia": [
+      "Dia Kurosawa"
+    ],
+    "ohara-mari": [
+      "Mari Ohara"
+    ],
+    "waiwaiwai": [
+      "waiwaiwai"
     ]
   }
 }
