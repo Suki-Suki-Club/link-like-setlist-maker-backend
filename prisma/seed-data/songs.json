@@ -3759,5 +3759,1425 @@
     "sortOrder": 481,
     "releaseDate": "2026-07-08",
     "deezerTrackId": 4069617471
+  },
+  {
+    "id": "aqours-heroes",
+    "title": "Aqours☆HEROES",
+    "titleJa": "Aqours☆HEROES",
+    "unitId": "aqours",
+    "sortOrder": 482,
+    "releaseDate": "2015-10-07",
+    "deezerTrackId": 3944127331
+  },
+  {
+    "id": "step-zero-to-one",
+    "title": "Step! ZERO to ONE",
+    "titleJa": "Step! ZERO to ONE",
+    "unitId": "aqours",
+    "sortOrder": 483,
+    "releaseDate": "2015-10-07",
+    "deezerTrackId": 3944127321
+  },
+  {
+    "id": "kiminokokorowakagayaiterukai",
+    "title": "君のこころは輝いてるかい？",
+    "titleJa": "君のこころは輝いてるかい？",
+    "unitId": "aqours",
+    "sortOrder": 484,
+    "releaseDate": "2015-10-07",
+    "deezerTrackId": 3946072951
+  },
+  {
+    "id": "matteteainouta",
+    "title": "待ってて愛のうた",
+    "titleJa": "待ってて愛のうた",
+    "unitId": "aqours",
+    "sortOrder": 485,
+    "releaseDate": "2016-04-27",
+    "deezerTrackId": 3944127361
+  },
+  {
+    "id": "todokanaihoshidatoshitemo",
+    "title": "届かない星だとしても",
+    "titleJa": "届かない星だとしても",
+    "unitId": "aqours",
+    "sortOrder": 486,
+    "releaseDate": "2016-04-27",
+    "deezerTrackId": 3944127371
+  },
+  {
+    "id": "koininaritaiaquarium",
+    "title": "恋になりたいAQUARIUM",
+    "titleJa": "恋になりたいAQUARIUM",
+    "unitId": "aqours",
+    "sortOrder": 487,
+    "releaseDate": "2016-04-27",
+    "deezerTrackId": 3944127351
+  },
+  {
+    "id": "genkizenkaiday-day-day",
+    "title": "元気全開DAY! DAY! DAY!",
+    "titleJa": "元気全開DAY! DAY! DAY!",
+    "unitId": "cyaron",
+    "sortOrder": 488,
+    "releaseDate": "2016-05-11",
+    "deezerTrackId": 3944112601
+  },
+  {
+    "id": "yozorawanandemoshitteruno",
+    "title": "夜空はなんでも知ってるの？",
+    "titleJa": "夜空はなんでも知ってるの？",
+    "unitId": "cyaron",
+    "sortOrder": 489,
+    "releaseDate": "2016-05-11",
+    "deezerTrackId": 3944112611
+  },
+  {
+    "id": "tokimekibunruigaku",
+    "title": "ときめき分類学",
+    "titleJa": "ときめき分類学",
+    "unitId": "azalea",
+    "sortOrder": 490,
+    "releaseDate": "2016-05-25",
+    "deezerTrackId": null
+  },
+  {
+    "id": "torikorikoplease",
+    "title": "トリコリコPLEASE!!",
+    "titleJa": "トリコリコPLEASE!!",
+    "unitId": "azalea",
+    "sortOrder": 491,
+    "releaseDate": "2016-05-25",
+    "deezerTrackId": null
+  },
+  {
+    "id": "guilty-night-guilty-kiss",
+    "title": "Guilty Night, Guilty Kiss!",
+    "titleJa": "Guilty Night, Guilty Kiss!",
+    "unitId": "guilty-kiss",
+    "sortOrder": 492,
+    "releaseDate": "2016-06-08",
+    "deezerTrackId": 3944112401
+  },
+  {
+    "id": "strawberry-trapper",
+    "title": "Strawberry Trapper",
+    "titleJa": "Strawberry Trapper",
+    "unitId": "guilty-kiss",
+    "sortOrder": 493,
+    "releaseDate": "2016-06-08",
+    "deezerTrackId": null
+  },
+  {
+    "id": "jinguruberugatomaranai",
+    "title": "ジングルベルがとまらない",
+    "titleJa": "ジングルベルがとまらない",
+    "unitId": "aqours",
+    "sortOrder": 494,
+    "releaseDate": "2016-11-23",
+    "deezerTrackId": 3944127211
+  },
+  {
+    "id": "seinaruhinoinori",
+    "title": "聖なる日の祈り",
+    "titleJa": "聖なる日の祈り",
+    "unitId": "aqours",
+    "sortOrder": 495,
+    "releaseDate": "2016-11-23",
+    "deezerTrackId": 3944127221
+  },
+  {
+    "id": "happy-party-train",
+    "title": "HAPPY PARTY TRAIN",
+    "titleJa": "HAPPY PARTY TRAIN",
+    "unitId": "aqours",
+    "sortOrder": 496,
+    "releaseDate": "2017-04-05",
+    "deezerTrackId": 3944126991
+  },
+  {
+    "id": "sky-journey",
+    "title": "SKY JOURNEY",
+    "titleJa": "SKY JOURNEY",
+    "unitId": "aqours",
+    "sortOrder": 497,
+    "releaseDate": "2017-04-05",
+    "deezerTrackId": 3944127001
+  },
+  {
+    "id": "sh-joij-nokoigashitai",
+    "title": "少女以上の恋がしたい",
+    "titleJa": "少女以上の恋がしたい",
+    "unitId": "aqours",
+    "sortOrder": 498,
+    "releaseDate": "2017-04-05",
+    "deezerTrackId": 3944127011
+  },
+  {
+    "id": "kaigand-ridematteruyo",
+    "title": "海岸通りで待ってるよ",
+    "titleJa": "海岸通りで待ってるよ",
+    "unitId": "cyaron",
+    "sortOrder": 499,
+    "releaseDate": "2017-05-10",
+    "deezerTrackId": 3944260691
+  },
+  {
+    "id": "kinmiraihapp-endo",
+    "title": "近未来ハッピーエンド",
+    "titleJa": "近未来ハッピーエンド",
+    "unitId": "cyaron",
+    "sortOrder": 500,
+    "releaseDate": "2017-05-10",
+    "deezerTrackId": 3944260681
+  },
+  {
+    "id": "galaxy-hide-and-seek",
+    "title": "GALAXY HidE and SeeK",
+    "titleJa": "GALAXY HidE and SeeK",
+    "unitId": "azalea",
+    "sortOrder": 501,
+    "releaseDate": "2017-05-31",
+    "deezerTrackId": null
+  },
+  {
+    "id": "innocent-bird",
+    "title": "INNOCENT BIRD",
+    "titleJa": "INNOCENT BIRD",
+    "unitId": "azalea",
+    "sortOrder": 502,
+    "releaseDate": "2017-05-31",
+    "deezerTrackId": null
+  },
+  {
+    "id": "shadow-gate-to-love",
+    "title": "Shadow gate to love",
+    "titleJa": "Shadow gate to love",
+    "unitId": "guilty-kiss",
+    "sortOrder": 503,
+    "releaseDate": "2017-06-21",
+    "deezerTrackId": 3944112991
+  },
+  {
+    "id": "kowareyasuki",
+    "title": "コワレヤスキ",
+    "titleJa": "コワレヤスキ",
+    "unitId": "guilty-kiss",
+    "sortOrder": 504,
+    "releaseDate": "2017-06-21",
+    "deezerTrackId": 3944112981
+  },
+  {
+    "id": "kiminohitomiomegurub-ken",
+    "title": "君の瞳を巡る冒険",
+    "titleJa": "君の瞳を巡る冒険",
+    "unitId": "aqours",
+    "sortOrder": 505,
+    "releaseDate": "2017-10-25",
+    "deezerTrackId": 3944127141
+  },
+  {
+    "id": "mirainobokurawashitteruyo",
+    "title": "未来の僕らは知ってるよ",
+    "titleJa": "未来の僕らは知ってるよ",
+    "unitId": "aqours",
+    "sortOrder": 506,
+    "releaseDate": "2017-10-25",
+    "deezerTrackId": 3944127121
+  },
+  {
+    "id": "my-list-to-you",
+    "title": "“MY LIST” to you!",
+    "titleJa": "“MY LIST” to you!",
+    "unitId": "aqours",
+    "sortOrder": 507,
+    "releaseDate": "2017-11-15",
+    "deezerTrackId": 3944135371
+  },
+  {
+    "id": "y-kiwadokoni-kunnomuneni",
+    "title": "勇気はどこに？君の胸に！",
+    "titleJa": "勇気はどこに？君の胸に！",
+    "unitId": "aqours",
+    "sortOrder": 508,
+    "releaseDate": "2017-11-15",
+    "deezerTrackId": 3944135361
+  },
+  {
+    "id": "miracle-wave",
+    "title": "MIRACLE WAVE",
+    "titleJa": "MIRACLE WAVE",
+    "unitId": "aqours",
+    "sortOrder": 509,
+    "releaseDate": "2017-11-29",
+    "deezerTrackId": 3944134181
+  },
+  {
+    "id": "mymai-tonight",
+    "title": "MY舞☆TONIGHT",
+    "titleJa": "MY舞☆TONIGHT",
+    "unitId": "aqours",
+    "sortOrder": 510,
+    "releaseDate": "2017-11-29",
+    "deezerTrackId": 3944134171
+  },
+  {
+    "id": "awaken-the-power",
+    "title": "Awaken the power",
+    "titleJa": "Awaken the power",
+    "unitId": "saint-aqours-snow",
+    "sortOrder": 511,
+    "releaseDate": "2017-12-20",
+    "deezerTrackId": 3944135151
+  },
+  {
+    "id": "crash-mind",
+    "title": "CRASH MIND",
+    "titleJa": "CRASH MIND",
+    "unitId": "saint-snow",
+    "sortOrder": 512,
+    "releaseDate": "2017-12-20",
+    "deezerTrackId": 3944135161
+  },
+  {
+    "id": "dropout",
+    "title": "DROPOUT!?",
+    "titleJa": "DROPOUT!?",
+    "unitId": "saint-snow",
+    "sortOrder": 513,
+    "releaseDate": "2017-12-20",
+    "deezerTrackId": 3944135171
+  },
+  {
+    "id": "water-blue-new-world",
+    "title": "WATER BLUE NEW WORLD",
+    "titleJa": "WATER BLUE NEW WORLD",
+    "unitId": "aqours",
+    "sortOrder": 514,
+    "releaseDate": "2018-01-17",
+    "deezerTrackId": 3944134981
+  },
+  {
+    "id": "wonderful-stories",
+    "title": "WONDERFUL STORIES",
+    "titleJa": "WONDERFUL STORIES",
+    "unitId": "aqours",
+    "sortOrder": 515,
+    "releaseDate": "2018-01-17",
+    "deezerTrackId": 3944134991
+  },
+  {
+    "id": "no-10",
+    "title": "No.10",
+    "titleJa": "No.10",
+    "unitId": "aqours",
+    "sortOrder": 516,
+    "releaseDate": "2018-08-01",
+    "deezerTrackId": 3944015251
+  },
+  {
+    "id": "thank-you-friends",
+    "title": "Thank you, FRIENDS!!",
+    "titleJa": "Thank you, FRIENDS!!",
+    "unitId": "aqours",
+    "sortOrder": 517,
+    "releaseDate": "2018-08-01",
+    "deezerTrackId": 3944015241
+  },
+  {
+    "id": "dance-with-minotaurus",
+    "title": "Dance with Minotaurus",
+    "titleJa": "Dance with Minotaurus",
+    "unitId": "aqours",
+    "sortOrder": 518,
+    "releaseDate": "2019-09-25",
+    "deezerTrackId": 3943985071
+  },
+  {
+    "id": "deep-resonance",
+    "title": "Deep Resonance",
+    "titleJa": "Deep Resonance",
+    "unitId": "aqours",
+    "sortOrder": 519,
+    "releaseDate": "2019-09-25",
+    "deezerTrackId": 3943985061
+  },
+  {
+    "id": "mitaikenhorizon",
+    "title": "未体験HORIZON",
+    "titleJa": "未体験HORIZON",
+    "unitId": "aqours",
+    "sortOrder": 520,
+    "releaseDate": "2019-09-25",
+    "deezerTrackId": 3943985051
+  },
+  {
+    "id": "kokoro-magic-a-to-z",
+    "title": "KOKORO Magic “A to Z”",
+    "titleJa": "KOKORO Magic “A to Z”",
+    "unitId": "aqours",
+    "sortOrder": 521,
+    "releaseDate": "2019-10-30",
+    "deezerTrackId": null
+  },
+  {
+    "id": "wake-up-challenger",
+    "title": "Wake up, Challenger!!",
+    "titleJa": "Wake up, Challenger!!",
+    "unitId": "aqours",
+    "sortOrder": 522,
+    "releaseDate": "2019-10-30",
+    "deezerTrackId": 3943985021
+  },
+  {
+    "id": "love-pulsar",
+    "title": "Love Pulsar",
+    "titleJa": "Love Pulsar",
+    "unitId": "guilty-kiss",
+    "sortOrder": 523,
+    "releaseDate": "2019-11-27",
+    "deezerTrackId": 3943976891
+  },
+  {
+    "id": "new-romantic-sailors",
+    "title": "New Romantic Sailors",
+    "titleJa": "New Romantic Sailors",
+    "unitId": "guilty-kiss",
+    "sortOrder": 524,
+    "releaseDate": "2019-11-27",
+    "deezerTrackId": null
+  },
+  {
+    "id": "phantom-rocket-adventure",
+    "title": "Phantom Rocket Adventure",
+    "titleJa": "Phantom Rocket Adventure",
+    "unitId": "guilty-kiss",
+    "sortOrder": 525,
+    "releaseDate": "2019-11-27",
+    "deezerTrackId": null
+  },
+  {
+    "id": "braveheart-coaster",
+    "title": "Braveheart Coaster",
+    "titleJa": "Braveheart Coaster",
+    "unitId": "cyaron",
+    "sortOrder": 526,
+    "releaseDate": "2019-12-04",
+    "deezerTrackId": null
+  },
+  {
+    "id": "changeless",
+    "title": "CHANGELESS",
+    "titleJa": "CHANGELESS",
+    "unitId": "cyaron",
+    "sortOrder": 527,
+    "releaseDate": "2019-12-04",
+    "deezerTrackId": 3944260731
+  },
+  {
+    "id": "kodoku-terep-to",
+    "title": "コドク・テレポート",
+    "titleJa": "コドク・テレポート",
+    "unitId": "cyaron",
+    "sortOrder": 528,
+    "releaseDate": "2019-12-04",
+    "deezerTrackId": 3944260741
+  },
+  {
+    "id": "amazing-travel-dna",
+    "title": "Amazing Travel DNA",
+    "titleJa": "Amazing Travel DNA",
+    "unitId": "azalea",
+    "sortOrder": 529,
+    "releaseDate": "2019-12-11",
+    "deezerTrackId": null
+  },
+  {
+    "id": "meizusekai",
+    "title": "メイズセカイ",
+    "titleJa": "メイズセカイ",
+    "unitId": "azalea",
+    "sortOrder": 530,
+    "releaseDate": "2019-12-11",
+    "deezerTrackId": null
+  },
+  {
+    "id": "k-ch-ren-airon",
+    "title": "空中恋愛論",
+    "titleJa": "空中恋愛論",
+    "unitId": "azalea",
+    "sortOrder": 531,
+    "releaseDate": "2019-12-11",
+    "deezerTrackId": null
+  },
+  {
+    "id": "aqours-pirates-desire",
+    "title": "Aqours Pirates Desire",
+    "titleJa": "Aqours Pirates Desire",
+    "unitId": "aqours",
+    "sortOrder": 532,
+    "releaseDate": "2020-07-22",
+    "deezerTrackId": 3943968101
+  },
+  {
+    "id": "fantastic-departure",
+    "title": "Fantastic Departure!",
+    "titleJa": "Fantastic Departure!",
+    "unitId": "aqours",
+    "sortOrder": 533,
+    "releaseDate": "2020-07-22",
+    "deezerTrackId": null
+  },
+  {
+    "id": "never-giving-up",
+    "title": "Never giving up!",
+    "titleJa": "Never giving up!",
+    "unitId": "takami-chika",
+    "sortOrder": 534,
+    "releaseDate": "2020-08-01",
+    "deezerTrackId": 3944179721
+  },
+  {
+    "id": "one-more-sunshine-story-album-version",
+    "title": "One More Sunshine Story (Album Version)",
+    "titleJa": "One More Sunshine Story (Album Version)",
+    "unitId": "takami-chika",
+    "sortOrder": 535,
+    "releaseDate": "2020-08-01",
+    "deezerTrackId": null
+  },
+  {
+    "id": "after-the-rain",
+    "title": "After The Rain",
+    "titleJa": "After The Rain",
+    "unitId": "saint-snow",
+    "sortOrder": 536,
+    "releaseDate": "2020-08-19",
+    "deezerTrackId": 3943976841
+  },
+  {
+    "id": "dazzling-white-town",
+    "title": "Dazzling White Town",
+    "titleJa": "Dazzling White Town",
+    "unitId": "saint-snow",
+    "sortOrder": 537,
+    "releaseDate": "2020-08-19",
+    "deezerTrackId": 3943976821
+  },
+  {
+    "id": "lonely-snow-planet",
+    "title": "Lonely Snow Planet",
+    "titleJa": "Lonely Snow Planet",
+    "unitId": "saint-snow",
+    "sortOrder": 538,
+    "releaseDate": "2020-08-19",
+    "deezerTrackId": 3943976831
+  },
+  {
+    "id": "pianoforte-monologue",
+    "title": "Pianoforte Monologue",
+    "titleJa": "Pianoforte Monologue",
+    "unitId": "sakurauchi-riko",
+    "sortOrder": 539,
+    "releaseDate": "2020-09-19",
+    "deezerTrackId": 3944181181
+  },
+  {
+    "id": "pure-phrase",
+    "title": "PURE PHRASE",
+    "titleJa": "PURE PHRASE",
+    "unitId": "sakurauchi-riko",
+    "sortOrder": 540,
+    "releaseDate": "2020-09-19",
+    "deezerTrackId": 3944181331
+  },
+  {
+    "id": "red-gem-wink",
+    "title": "RED GEM WINK",
+    "titleJa": "RED GEM WINK",
+    "unitId": "kurosawa-ruby",
+    "sortOrder": 541,
+    "releaseDate": "2020-09-21",
+    "deezerTrackId": 3944180291
+  },
+  {
+    "id": "kottonkyandieieio",
+    "title": "コットンキャンディえいえいおー！",
+    "titleJa": "コットンキャンディえいえいおー！",
+    "unitId": "kurosawa-ruby",
+    "sortOrder": 542,
+    "releaseDate": "2020-09-21",
+    "deezerTrackId": 3944180441
+  },
+  {
+    "id": "daydream-warrior",
+    "title": "Daydream Warrior",
+    "titleJa": "Daydream Warrior",
+    "unitId": "aqours",
+    "sortOrder": 543,
+    "releaseDate": "2020-10-07",
+    "deezerTrackId": 3946073151
+  },
+  {
+    "id": "future-flight-minnadetsukuruaqoursnouta",
+    "title": "Future flight（みんなで作るAqoursの歌）",
+    "titleJa": "Future flight（みんなで作るAqoursの歌）",
+    "unitId": "aqours",
+    "sortOrder": 544,
+    "releaseDate": "2020-10-07",
+    "deezerTrackId": null
+  },
+  {
+    "id": "landing-action-yeah",
+    "title": "Landing action Yeah!!",
+    "titleJa": "Landing action Yeah!!",
+    "unitId": "aqours",
+    "sortOrder": 545,
+    "releaseDate": "2020-10-07",
+    "deezerTrackId": 3944134841
+  },
+  {
+    "id": "mirai-ticket",
+    "title": "MIRAI TICKET",
+    "titleJa": "MIRAI TICKET",
+    "unitId": "aqours",
+    "sortOrder": 546,
+    "releaseDate": "2020-10-07",
+    "deezerTrackId": 3944126741
+  },
+  {
+    "id": "pops-heartdeodorundamon",
+    "title": "Pops heartで踊るんだもん！",
+    "titleJa": "Pops heartで踊るんだもん！",
+    "unitId": "aqours",
+    "sortOrder": 547,
+    "releaseDate": "2020-10-07",
+    "deezerTrackId": 3946073121
+  },
+  {
+    "id": "kisekihikaru",
+    "title": "キセキヒカル",
+    "titleJa": "キセキヒカル",
+    "unitId": "aqours",
+    "sortOrder": 548,
+    "releaseDate": "2020-10-07",
+    "deezerTrackId": 3946073271
+  },
+  {
+    "id": "sanshainpikkapikaondo",
+    "title": "サンシャインぴっかぴか音頭",
+    "titleJa": "サンシャインぴっかぴか音頭",
+    "unitId": "aqours",
+    "sortOrder": 549,
+    "releaseDate": "2020-10-07",
+    "deezerTrackId": 3944127951
+  },
+  {
+    "id": "suriringu-wan-wei",
+    "title": "スリリング・ワンウェイ",
+    "titleJa": "スリリング・ワンウェイ",
+    "unitId": "aqours",
+    "sortOrder": 550,
+    "releaseDate": "2020-10-07",
+    "deezerTrackId": 3946073171
+  },
+  {
+    "id": "daisukidatsutaradaijoubu",
+    "title": "ダイスキだったらダイジョウブ！",
+    "titleJa": "ダイスキだったらダイジョウブ！",
+    "unitId": "cyaron",
+    "sortOrder": 551,
+    "releaseDate": "2020-10-07",
+    "deezerTrackId": null
+  },
+  {
+    "id": "hamingufurendo",
+    "title": "ハミングフレンド",
+    "titleJa": "ハミングフレンド",
+    "unitId": "aqours",
+    "sortOrder": 552,
+    "releaseDate": "2020-10-07",
+    "deezerTrackId": 3944126831
+  },
+  {
+    "id": "yumekataruyoriyumeuta",
+    "title": "ユメ語るよりユメ歌おう",
+    "titleJa": "ユメ語るよりユメ歌おう",
+    "unitId": "aqours",
+    "sortOrder": 553,
+    "releaseDate": "2020-10-07",
+    "deezerTrackId": 3944127941
+  },
+  {
+    "id": "soramokokoromoharerukara",
+    "title": "空も心も晴れるから",
+    "titleJa": "空も心も晴れるから",
+    "unitId": "cyaron",
+    "sortOrder": 554,
+    "releaseDate": "2020-10-07",
+    "deezerTrackId": null
+  },
+  {
+    "id": "kimetayohand-in-hand",
+    "title": "決めたよHand in Hand",
+    "titleJa": "決めたよHand in Hand",
+    "unitId": "cyaron",
+    "sortOrder": 555,
+    "releaseDate": "2020-10-07",
+    "deezerTrackId": null
+  },
+  {
+    "id": "aozorajumping-heart",
+    "title": "青空Jumping Heart",
+    "titleJa": "青空Jumping Heart",
+    "unitId": "aqours",
+    "sortOrder": 556,
+    "releaseDate": "2020-10-07",
+    "deezerTrackId": 3944126821
+  },
+  {
+    "id": "taiy-ooikakero",
+    "title": "太陽を追いかけろ！",
+    "titleJa": "太陽を追いかけろ！",
+    "unitId": "aqours",
+    "sortOrder": 557,
+    "releaseDate": "2020-10-07",
+    "deezerTrackId": 3946073181
+  },
+  {
+    "id": "mijukudreamer",
+    "title": "未熟DREAMER",
+    "titleJa": "未熟DREAMER",
+    "unitId": "aqours",
+    "sortOrder": 558,
+    "releaseDate": "2020-10-07",
+    "deezerTrackId": 3946073081
+  },
+  {
+    "id": "yumedeyozoraoterashitai",
+    "title": "夢で夜空を照らしたい",
+    "titleJa": "夢で夜空を照らしたい",
+    "unitId": "cyaron",
+    "sortOrder": 559,
+    "releaseDate": "2020-10-07",
+    "deezerTrackId": null
+  },
+  {
+    "id": "perfect-sekai",
+    "title": "Perfect SEKAI",
+    "titleJa": "Perfect SEKAI",
+    "unitId": "kurosawa-dia",
+    "sortOrder": 560,
+    "releaseDate": "2021-01-01",
+    "deezerTrackId": 3944162811
+  },
+  {
+    "id": "white-first-love",
+    "title": "WHITE FIRST LOVE",
+    "titleJa": "WHITE FIRST LOVE",
+    "unitId": "kurosawa-dia",
+    "sortOrder": 561,
+    "releaseDate": "2021-01-01",
+    "deezerTrackId": 3944162641
+  },
+  {
+    "id": "sakanakanandaka",
+    "title": "さかなかなんだか？",
+    "titleJa": "さかなかなんだか？",
+    "unitId": "matsuura-kanan",
+    "sortOrder": 562,
+    "releaseDate": "2021-02-10",
+    "deezerTrackId": 3944171021
+  },
+  {
+    "id": "mottone",
+    "title": "もっとね！",
+    "titleJa": "もっとね！",
+    "unitId": "matsuura-kanan",
+    "sortOrder": 563,
+    "releaseDate": "2021-02-10",
+    "deezerTrackId": 3944171171
+  },
+  {
+    "id": "akogareranraran",
+    "title": "あこがれランララン",
+    "titleJa": "あこがれランララン",
+    "unitId": "kunikida-hanamaru",
+    "sortOrder": 564,
+    "releaseDate": "2021-03-04",
+    "deezerTrackId": 3944173821
+  },
+  {
+    "id": "oyasuminasan",
+    "title": "おやすみなさん！",
+    "titleJa": "おやすみなさん！",
+    "unitId": "kunikida-hanamaru",
+    "sortOrder": 565,
+    "releaseDate": "2021-03-04",
+    "deezerTrackId": 3944173661
+  },
+  {
+    "id": "main-theme-of-aqours-5th-anniversary",
+    "title": "Main theme of Aqours 5th anniversary!!",
+    "titleJa": "Main theme of Aqours 5th anniversary!!",
+    "unitId": "aqours",
+    "sortOrder": 566,
+    "releaseDate": "2021-03-31",
+    "deezerTrackId": null
+  },
+  {
+    "id": "smile-smile-ship-start",
+    "title": "smile smile ship Start!",
+    "titleJa": "smile smile ship Start!",
+    "unitId": "aqours",
+    "sortOrder": 567,
+    "releaseDate": "2021-03-31",
+    "deezerTrackId": 3593578722
+  },
+  {
+    "id": "kokoronohaneyokimietondeke",
+    "title": "心の羽よ君へ飛んでけ！",
+    "titleJa": "心の羽よ君へ飛んでけ！",
+    "unitId": "aqours",
+    "sortOrder": 568,
+    "releaseDate": "2021-03-31",
+    "deezerTrackId": 3593578732
+  },
+  {
+    "id": "beginner-s-sailing",
+    "title": "Beginner's Sailing",
+    "titleJa": "Beginner's Sailing",
+    "unitId": "watanabe-you",
+    "sortOrder": 569,
+    "releaseDate": "2021-04-17",
+    "deezerTrackId": null
+  },
+  {
+    "id": "totsuzengirl",
+    "title": "突然GIRL",
+    "titleJa": "突然GIRL",
+    "unitId": "watanabe-you",
+    "sortOrder": 570,
+    "releaseDate": "2021-04-17",
+    "deezerTrackId": null
+  },
+  {
+    "id": "p-s-nomuk-gawa",
+    "title": "P.S.の向こう側",
+    "titleJa": "P.S.の向こう側",
+    "unitId": "cyaron",
+    "sortOrder": 571,
+    "releaseDate": "2021-06-02",
+    "deezerTrackId": 3944260671
+  },
+  {
+    "id": "whistle-of-revolution",
+    "title": "Whistle of Revolution",
+    "titleJa": "Whistle of Revolution",
+    "unitId": "cyaron",
+    "sortOrder": 572,
+    "releaseDate": "2021-06-02",
+    "deezerTrackId": 3944260631
+  },
+  {
+    "id": "aruhi-eienmitaini",
+    "title": "ある日…永遠みたいに！",
+    "titleJa": "ある日…永遠みたいに！",
+    "unitId": "cyaron",
+    "sortOrder": 573,
+    "releaseDate": "2021-06-02",
+    "deezerTrackId": 3944260621
+  },
+  {
+    "id": "sakurabaibai",
+    "title": "サクラバイバイ",
+    "titleJa": "サクラバイバイ",
+    "unitId": "cyaron",
+    "sortOrder": 574,
+    "releaseDate": "2021-06-02",
+    "deezerTrackId": 3944260751
+  },
+  {
+    "id": "doragonraid-zu",
+    "title": "ドラゴンライダーズ",
+    "titleJa": "ドラゴンライダーズ",
+    "unitId": "cyaron",
+    "sortOrder": 575,
+    "releaseDate": "2021-06-02",
+    "deezerTrackId": 3944260701
+  },
+  {
+    "id": "new-winding-road",
+    "title": "New winding road",
+    "titleJa": "New winding road",
+    "unitId": "ohara-mari",
+    "sortOrder": 576,
+    "releaseDate": "2021-06-13",
+    "deezerTrackId": 3944171631
+  },
+  {
+    "id": "shiny-racers",
+    "title": "Shiny Racers",
+    "titleJa": "Shiny Racers",
+    "unitId": "ohara-mari",
+    "sortOrder": 577,
+    "releaseDate": "2021-06-13",
+    "deezerTrackId": 3944171791
+  },
+  {
+    "id": "lonely-tuning",
+    "title": "LONELY TUNING",
+    "titleJa": "LONELY TUNING",
+    "unitId": "azalea",
+    "sortOrder": 578,
+    "releaseDate": "2021-06-23",
+    "deezerTrackId": null
+  },
+  {
+    "id": "phoenix-dance",
+    "title": "PHOENIX DANCE",
+    "titleJa": "PHOENIX DANCE",
+    "unitId": "azalea",
+    "sortOrder": 579,
+    "releaseDate": "2021-06-23",
+    "deezerTrackId": null
+  },
+  {
+    "id": "we-ll-get-the-next-dream",
+    "title": "We‘ll get the next dream!!!",
+    "titleJa": "We‘ll get the next dream!!!",
+    "unitId": "azalea",
+    "sortOrder": 580,
+    "releaseDate": "2021-06-23",
+    "deezerTrackId": null
+  },
+  {
+    "id": "metamorufizumu",
+    "title": "メタモルフィズム",
+    "titleJa": "メタモルフィズム",
+    "unitId": "azalea",
+    "sortOrder": 581,
+    "releaseDate": "2021-06-23",
+    "deezerTrackId": null
+  },
+  {
+    "id": "sotsugy-desune",
+    "title": "卒業ですね",
+    "titleJa": "卒業ですね",
+    "unitId": "azalea",
+    "sortOrder": 582,
+    "releaseDate": "2021-06-23",
+    "deezerTrackId": null
+  },
+  {
+    "id": "in-this-unstable-world",
+    "title": "in this unstable world",
+    "titleJa": "in this unstable world",
+    "unitId": "tsushima-yoshiko",
+    "sortOrder": 583,
+    "releaseDate": "2021-07-13",
+    "deezerTrackId": 3944171461
+  },
+  {
+    "id": "tatehokotsubasa",
+    "title": "タテホコツバサ",
+    "titleJa": "タテホコツバサ",
+    "unitId": "tsushima-yoshiko",
+    "sortOrder": 584,
+    "releaseDate": "2021-07-13",
+    "deezerTrackId": 3944171611
+  },
+  {
+    "id": "deep-sea-cocoon",
+    "title": "Deep Sea Cocoon",
+    "titleJa": "Deep Sea Cocoon",
+    "unitId": "guilty-kiss",
+    "sortOrder": 585,
+    "releaseDate": "2021-07-28",
+    "deezerTrackId": 3944268721
+  },
+  {
+    "id": "guilty-eyes-fever",
+    "title": "Guilty Eyes Fever",
+    "titleJa": "Guilty Eyes Fever",
+    "unitId": "guilty-kiss",
+    "sortOrder": 586,
+    "releaseDate": "2021-07-28",
+    "deezerTrackId": 3944268771
+  },
+  {
+    "id": "guilty-farewell-party",
+    "title": "Guilty!? Farewell party",
+    "titleJa": "Guilty!? Farewell party",
+    "unitId": "guilty-kiss",
+    "sortOrder": 587,
+    "releaseDate": "2021-07-28",
+    "deezerTrackId": 3944268851
+  },
+  {
+    "id": "nameless-love-song",
+    "title": "Nameless Love Song",
+    "titleJa": "Nameless Love Song",
+    "unitId": "guilty-kiss",
+    "sortOrder": 588,
+    "releaseDate": "2021-07-28",
+    "deezerTrackId": 3944268801
+  },
+  {
+    "id": "shooting-star-warrior",
+    "title": "Shooting Star Warrior",
+    "titleJa": "Shooting Star Warrior",
+    "unitId": "guilty-kiss",
+    "sortOrder": 589,
+    "releaseDate": "2021-07-28",
+    "deezerTrackId": 3944268701
+  },
+  {
+    "id": "okawari-happy-life",
+    "title": "OKAWARI Happy life!",
+    "titleJa": "OKAWARI Happy life!",
+    "unitId": "takami-chika",
+    "sortOrder": 590,
+    "releaseDate": "2021-08-01",
+    "deezerTrackId": 3944171441
+  },
+  {
+    "id": "love-spiral-tower",
+    "title": "Love Spiral Tower",
+    "titleJa": "Love Spiral Tower",
+    "unitId": "sakurauchi-riko",
+    "sortOrder": 591,
+    "releaseDate": "2021-09-19",
+    "deezerTrackId": 3944170761
+  },
+  {
+    "id": "1star",
+    "title": "1STAR",
+    "titleJa": "1STAR",
+    "unitId": "kurosawa-ruby",
+    "sortOrder": 592,
+    "releaseDate": "2021-09-21",
+    "deezerTrackId": 3944170991
+  },
+  {
+    "id": "ku-ru-ku-ru-cruller",
+    "title": "KU-RU-KU-RU Cruller!",
+    "titleJa": "KU-RU-KU-RU Cruller!",
+    "unitId": "aqours",
+    "sortOrder": 593,
+    "releaseDate": "2021-09-22",
+    "deezerTrackId": 3593578752
+  },
+  {
+    "id": "suki-for-you-dream-for-you",
+    "title": "SUKI for you, DREAM for you!",
+    "titleJa": "SUKI for you, DREAM for you!",
+    "unitId": "aqours",
+    "sortOrder": 594,
+    "releaseDate": "2021-09-22",
+    "deezerTrackId": 3593578762
+  },
+  {
+    "id": "brightest-melody",
+    "title": "Brightest Melody",
+    "titleJa": "Brightest Melody",
+    "unitId": "aqours",
+    "sortOrder": 595,
+    "releaseDate": "2021-10-07",
+    "deezerTrackId": 3944005471
+  },
+  {
+    "id": "hop-stop-nonstop",
+    "title": "Hop? Stop? Nonstop!",
+    "titleJa": "Hop? Stop? Nonstop!",
+    "unitId": "aqours",
+    "sortOrder": 596,
+    "releaseDate": "2021-10-07",
+    "deezerTrackId": 3944338461
+  },
+  {
+    "id": "i-n-g-i-try",
+    "title": "i-n-g, I TRY!!",
+    "titleJa": "i-n-g, I TRY!!",
+    "unitId": "aqours",
+    "sortOrder": 597,
+    "releaseDate": "2021-10-07",
+    "deezerTrackId": 3946072791
+  },
+  {
+    "id": "jimo-ai-dash",
+    "title": "JIMO-AI Dash!",
+    "titleJa": "JIMO-AI Dash!",
+    "unitId": "aqours",
+    "sortOrder": 598,
+    "releaseDate": "2021-10-07",
+    "deezerTrackId": 3943946501
+  },
+  {
+    "id": "jump-up-high",
+    "title": "Jump up HIGH!!",
+    "titleJa": "Jump up HIGH!!",
+    "unitId": "aqours",
+    "sortOrder": 599,
+    "releaseDate": "2021-10-07",
+    "deezerTrackId": 3943984891
+  },
+  {
+    "id": "marine-border-parasol",
+    "title": "Marine Border Parasol",
+    "titleJa": "Marine Border Parasol",
+    "unitId": "cyaron",
+    "sortOrder": 600,
+    "releaseDate": "2021-10-07",
+    "deezerTrackId": null
+  },
+  {
+    "id": "next-sparkling",
+    "title": "Next SPARKLING!!",
+    "titleJa": "Next SPARKLING!!",
+    "unitId": "aqours",
+    "sortOrder": 601,
+    "releaseDate": "2021-10-07",
+    "deezerTrackId": 3944005541
+  },
+  {
+    "id": "over-the-next-rainbow",
+    "title": "Over The Next Rainbow",
+    "titleJa": "Over The Next Rainbow",
+    "unitId": "saint-aqours-snow",
+    "sortOrder": 602,
+    "releaseDate": "2021-10-07",
+    "deezerTrackId": 3944005481
+  },
+  {
+    "id": "hoppu-suteppu-w-i",
+    "title": "ホップ・ステップ・ワーイ！",
+    "titleJa": "ホップ・ステップ・ワーイ！",
+    "unitId": "aqours",
+    "sortOrder": 603,
+    "releaseDate": "2021-10-07",
+    "deezerTrackId": 3944015481
+  },
+  {
+    "id": "b-kentype-a-b-c",
+    "title": "冒険Type A, B, C‼",
+    "titleJa": "冒険Type A, B, C‼",
+    "unitId": "aqours",
+    "sortOrder": 604,
+    "releaseDate": "2021-10-07",
+    "deezerTrackId": 3946072811
+  },
+  {
+    "id": "bokuranohashittekitamichiwa",
+    "title": "僕らの走ってきた道は…",
+    "titleJa": "僕らの走ってきた道は…",
+    "unitId": "aqours",
+    "sortOrder": 605,
+    "releaseDate": "2021-10-07",
+    "deezerTrackId": 3944005531
+  },
+  {
+    "id": "namida",
+    "title": "涙×",
+    "titleJa": "涙×",
+    "unitId": "aqours",
+    "sortOrder": 606,
+    "releaseDate": "2021-10-07",
+    "deezerTrackId": 3946072941
+  },
+  {
+    "id": "not-alone-not-hitori",
+    "title": "not ALONE not HITORI",
+    "titleJa": "not ALONE not HITORI",
+    "unitId": "aqours",
+    "sortOrder": 607,
+    "releaseDate": "2021-11-24",
+    "deezerTrackId": 3593578772
+  },
+  {
+    "id": "motto-zutto-be-with-you",
+    "title": "MOTTO-ZUTTO be with you",
+    "titleJa": "MOTTO-ZUTTO be with you",
+    "unitId": "kurosawa-dia",
+    "sortOrder": 608,
+    "releaseDate": "2022-01-01",
+    "deezerTrackId": 3944173481
+  },
+  {
+    "id": "run-kakeru-run",
+    "title": "RUN KAKERU RUN",
+    "titleJa": "RUN KAKERU RUN",
+    "unitId": "matsuura-kanan",
+    "sortOrder": 609,
+    "releaseDate": "2022-02-10",
+    "deezerTrackId": 3430471971
+  },
+  {
+    "id": "y-k-unry-sui",
+    "title": "やあ！行雲流水！？",
+    "titleJa": "やあ！行雲流水！？",
+    "unitId": "kunikida-hanamaru",
+    "sortOrder": 610,
+    "releaseDate": "2022-03-04",
+    "deezerTrackId": 3430467961
+  },
+  {
+    "id": "nandodatteyakusoku",
+    "title": "なんどだって約束！",
+    "titleJa": "なんどだって約束！",
+    "unitId": "aqours",
+    "sortOrder": 611,
+    "releaseDate": "2022-04-13",
+    "deezerTrackId": 3430450891
+  },
+  {
+    "id": "paradise-chime",
+    "title": "Paradise Chime",
+    "titleJa": "Paradise Chime",
+    "unitId": "watanabe-you",
+    "sortOrder": 612,
+    "releaseDate": "2022-04-17",
+    "deezerTrackId": null
+  },
+  {
+    "id": "love-is-all-i-sing-love-is-all",
+    "title": "Love is all, I sing love is all!",
+    "titleJa": "Love is all, I sing love is all!",
+    "unitId": "ohara-mari",
+    "sortOrder": 613,
+    "releaseDate": "2022-06-13",
+    "deezerTrackId": 3430475431
+  },
+  {
+    "id": "namiotorifurein",
+    "title": "ナミオトリフレイン",
+    "titleJa": "ナミオトリフレイン",
+    "unitId": "takami-chika",
+    "sortOrder": 614,
+    "releaseDate": "2022-08-01",
+    "deezerTrackId": 2967980301
+  },
+  {
+    "id": "suimennipiano",
+    "title": "水面にピアノ",
+    "titleJa": "水面にピアノ",
+    "unitId": "sakurauchi-riko",
+    "sortOrder": 615,
+    "releaseDate": "2022-09-19",
+    "deezerTrackId": 2967981321
+  },
+  {
+    "id": "aikotoba",
+    "title": "アイコトバ",
+    "titleJa": "アイコトバ",
+    "unitId": "kurosawa-ruby",
+    "sortOrder": 616,
+    "releaseDate": "2022-09-21",
+    "deezerTrackId": 2967979731
+  },
+  {
+    "id": "fabot-ju",
+    "title": "ファボタージュ",
+    "titleJa": "ファボタージュ",
+    "unitId": "waiwaiwai",
+    "sortOrder": 617,
+    "releaseDate": "2022-11-09",
+    "deezerTrackId": 3430473871
+  },
+  {
+    "id": "w-iwaiwai-waiwaiwai",
+    "title": "わーいわいわい　わいわいわい！",
+    "titleJa": "わーいわいわい　わいわいわい！",
+    "unitId": "waiwaiwai",
+    "sortOrder": 618,
+    "releaseDate": "2022-11-09",
+    "deezerTrackId": null
+  },
+  {
+    "id": "pure-heart-pure-wish",
+    "title": "Pure heart Pure wish",
+    "titleJa": "Pure heart Pure wish",
+    "unitId": "kurosawa-dia",
+    "sortOrder": 619,
+    "releaseDate": "2023-01-01",
+    "deezerTrackId": 2967982321
+  },
+  {
+    "id": "senchimentaruremon-do",
+    "title": "センチメンタルレモネード",
+    "titleJa": "センチメンタルレモネード",
+    "unitId": "matsuura-kanan",
+    "sortOrder": 620,
+    "releaseDate": "2023-02-10",
+    "deezerTrackId": 2967980061
+  },
+  {
+    "id": "tsubomi-season",
+    "title": "TSUBOMI SEASON",
+    "titleJa": "TSUBOMI SEASON",
+    "unitId": "kunikida-hanamaru",
+    "sortOrder": 621,
+    "releaseDate": "2023-03-04",
+    "deezerTrackId": 2967979891
+  },
+  {
+    "id": "umisorano-rora",
+    "title": "海空のオーロラ",
+    "titleJa": "海空のオーロラ",
+    "unitId": "watanabe-you",
+    "sortOrder": 622,
+    "releaseDate": "2023-04-17",
+    "deezerTrackId": null
+  },
+  {
+    "id": "matakiminiaunda",
+    "title": "また君に会うんだ",
+    "titleJa": "また君に会うんだ",
+    "unitId": "ohara-mari",
+    "sortOrder": 623,
+    "releaseDate": "2023-06-13",
+    "deezerTrackId": 2967980601
+  },
+  {
+    "id": "maboroshi-wing",
+    "title": "MABOROSHI wing",
+    "titleJa": "MABOROSHI wing",
+    "unitId": "tsushima-yoshiko",
+    "sortOrder": 624,
+    "releaseDate": "2023-07-13",
+    "deezerTrackId": 2967982771
+  },
+  {
+    "id": "game-on",
+    "title": "GAME ON！",
+    "titleJa": "GAME ON！",
+    "unitId": "aqours",
+    "sortOrder": 625,
+    "releaseDate": "2023-07-26",
+    "deezerTrackId": 2967976001
+  },
+  {
+    "id": "maboroshibimisuteriumu",
+    "title": "幻日ミステリウム",
+    "titleJa": "幻日ミステリウム",
+    "unitId": "aqours",
+    "sortOrder": 626,
+    "releaseDate": "2023-07-26",
+    "deezerTrackId": 2967975991
+  },
+  {
+    "id": "silent-pain",
+    "title": "SILENT PAIN",
+    "titleJa": "SILENT PAIN",
+    "unitId": "aqours",
+    "sortOrder": 627,
+    "releaseDate": "2023-08-02",
+    "deezerTrackId": 2967975781
+  },
+  {
+    "id": "kiminotamebokunotame",
+    "title": "キミノタメボクノタメ",
+    "titleJa": "キミノタメボクノタメ",
+    "unitId": "aqours",
+    "sortOrder": 628,
+    "releaseDate": "2023-08-02",
+    "deezerTrackId": 2967975771
+  },
+  {
+    "id": "peace-piece-pizza",
+    "title": "peace piece pizza",
+    "titleJa": "peace piece pizza",
+    "unitId": "waiwaiwai",
+    "sortOrder": 629,
+    "releaseDate": "2024-05-08",
+    "deezerTrackId": 2738636271
+  },
+  {
+    "id": "u-cyu",
+    "title": "U-CYU",
+    "titleJa": "U-CYU",
+    "unitId": "waiwaiwai",
+    "sortOrder": 630,
+    "releaseDate": "2024-05-08",
+    "deezerTrackId": 2738636281
+  },
+  {
+    "id": "deep-blue",
+    "title": "Deep Blue",
+    "titleJa": "Deep Blue",
+    "unitId": "aqours",
+    "sortOrder": 631,
+    "releaseDate": "2024-05-29",
+    "deezerTrackId": 2774208671
+  },
+  {
+    "id": "sakura-saku-kokoro-saku",
+    "title": "SAKURA-saku KOKORO-saku",
+    "titleJa": "SAKURA-saku KOKORO-saku",
+    "unitId": "aqours",
+    "sortOrder": 632,
+    "releaseDate": "2024-05-29",
+    "deezerTrackId": 2774208681
+  },
+  {
+    "id": "bokuranoumidemataa",
+    "title": "僕らの海でまた会おう",
+    "titleJa": "僕らの海でまた会おう",
+    "unitId": "aqours",
+    "sortOrder": 633,
+    "releaseDate": "2024-06-30",
+    "deezerTrackId": 2826674852
+  },
+  {
+    "id": "future-flight",
+    "title": "Future flight",
+    "titleJa": "Future flight",
+    "unitId": "takami-chika",
+    "sortOrder": 634,
+    "releaseDate": "2024-08-01",
+    "deezerTrackId": null
+  },
+  {
+    "id": "gemstone-de-a-i",
+    "title": "GEMSTONE “DE‐A‐I”",
+    "titleJa": "GEMSTONE “DE‐A‐I”",
+    "unitId": "takami-chika",
+    "sortOrder": 635,
+    "releaseDate": "2024-08-01",
+    "deezerTrackId": null
+  },
+  {
+    "id": "eiky-hours",
+    "title": "永久hours",
+    "titleJa": "永久hours",
+    "unitId": "aqours",
+    "sortOrder": 636,
+    "releaseDate": "2024-12-18",
+    "deezerTrackId": 3097230281
+  },
+  {
+    "id": "bokuranotabiwaowaranai",
+    "title": "僕らの旅は終わらない",
+    "titleJa": "僕らの旅は終わらない",
+    "unitId": "aqours",
+    "sortOrder": 637,
+    "releaseDate": "2024-12-18",
+    "deezerTrackId": 3097230291
+  },
+  {
+    "id": "believe-again",
+    "title": "Believe again",
+    "titleJa": "Believe again",
+    "unitId": "saint-snow",
+    "sortOrder": 638,
+    "deezerTrackId": 3944005461
+  },
+  {
+    "id": "yume-mirai-mugendai",
+    "title": "ユメ+ミライ＝無限大",
+    "titleJa": "ユメ+ミライ＝無限大",
+    "unitId": "aqours",
+    "sortOrder": 639,
+    "deezerTrackId": 3430446581
   }
 ]

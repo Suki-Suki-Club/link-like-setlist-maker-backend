@@ -352,5 +352,113 @@
     "name": "葉月 恋&若菜四季&鬼塚冬毬",
     "seriesId": "liella",
     "sortOrder": 59
+  },
+  {
+    "id": "aqours",
+    "name": "Aqours",
+    "seriesId": "aqours",
+    "sortOrder": 60
+  },
+  {
+    "id": "cyaron",
+    "name": "CYaRon！",
+    "seriesId": "aqours",
+    "sortOrder": 61
+  },
+  {
+    "id": "azalea",
+    "name": "AZALEA",
+    "seriesId": "aqours",
+    "sortOrder": 62
+  },
+  {
+    "id": "guilty-kiss",
+    "name": "Guilty Kiss",
+    "seriesId": "aqours",
+    "sortOrder": 63
+  },
+  {
+    "id": "saint-snow",
+    "name": "Saint Snow",
+    "seriesId": "aqours",
+    "sortOrder": 64
+  },
+  {
+    "id": "saint-aqours-snow",
+    "name": "Saint Aqours Snow",
+    "seriesId": "aqours",
+    "sortOrder": 65
+  },
+  {
+    "id": "takami-chika",
+    "name": "高海千歌",
+    "seriesId": "aqours",
+    "sortOrder": 66
+  },
+  {
+    "id": "sakurauchi-riko",
+    "name": "桜内梨子",
+    "seriesId": "aqours",
+    "sortOrder": 67
+  },
+  {
+    "id": "matsuura-kanan",
+    "name": "松浦果南",
+    "seriesId": "aqours",
+    "sortOrder": 68
+  },
+  {
+    "id": "watanabe-you",
+    "name": "渡辺 曜",
+    "seriesId": "aqours",
+    "sortOrder": 69
+  },
+  {
+    "id": "tsushima-yoshiko",
+    "name": "津島善子",
+    "seriesId": "aqours",
+    "sortOrder": 70
+  },
+  {
+    "id": "kunikida-hanamaru",
+    "name": "国木田花丸",
+    "seriesId": "aqours",
+    "sortOrder": 71
+  },
+  {
+    "id": "kurosawa-ruby",
+    "name": "黒澤ルビィ",
+    "seriesId": "aqours",
+    "sortOrder": 72
+  },
+  {
+    "id": "kurosawa-dia",
+    "name": "黒澤ダイヤ",
+    "seriesId": "aqours",
+    "sortOrder": 73
+  },
+  {
+    "id": "ohara-mari",
+    "name": "小原鞠莉",
+    "seriesId": "aqours",
+    "sortOrder": 74
+  },
+  {
+    "id": "kitaono-nagisa",
+    "name": "北田陽奈",
+    "seriesId": "aqours",
+    "sortOrder": 75
+  },
+  {
+    "id": "ono-azumi",
+    "name": "小野柚萌",
+    "seriesId": "aqours",
+    "sortOrder": 76
+  },
+  {
+    "id": "waiwaiwai",
+    "name": "わいわいわい",
+    "seriesId": "aqours",
+    "sortOrder": 77
   }
 ]

@@ -19,7 +19,11 @@ export function normalizeTitleKey(title: string): string {
 export function cleanScrapedTitle(title: string): string {
   return title
     .replace(
-      /[（(][^（）()]*(テーマソング|テーマ曲|主題歌|主題曲|挿入歌|イメージソング)[^（）()]*[）)]\s*$/u,
+      /[（(][^（）()]*(テーマソング|テーマ曲|主題歌|主題曲|挿入歌|イメージソング|Blu-ray|封入特典|特装限定版|Single|シングル|コラボソング)[^（）()]*[）)]\s*$/u,
+      ""
+    )
+    .replace(
+      /[【\[][^【】\[\]]*(テーマソング|主題歌|挿入歌|イメージソング|コラボ|Single|シングル)[^【】\[\]]*[】\]]\s*$/u,
       ""
     )
     .trim();
@@ -42,7 +46,10 @@ const DEFAULT_EXCLUDE_PATTERNS = [
   "solo\\s*ver\\.",
   "ソロver",
   "リミックス",
-  "\\bremix\\b"
+  "\\bremix\\b",
+  "promotion\\s*video",
+  "making\\s*of",
+  "dance\\s*video"
 ];
 
 export function createTrackExcluder(extraPatterns: string[] = []) {

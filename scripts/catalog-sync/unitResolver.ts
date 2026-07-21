@@ -20,6 +20,8 @@ export function cleanPerformerCredit(credit: string): string {
     .normalize("NFKC")
     .replace(/[（(]CV[.．][^）)]*[）)]/gi, "")
     .replace(/[［\[][^］\]]*[］\]]/g, "")
+    // Aqours の個人名義クレジットに付く "〜 from Aqours" のような英語の所属注記を除去
+    .replace(/\s+from\s+.+$/i, "")
     .replace(/[\s　]+/g, " ")
     .trim();
 }
